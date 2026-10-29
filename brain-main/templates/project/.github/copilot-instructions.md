@@ -1,3 +1,4 @@
-# Instructions Copilot — modèle de projet
+# GitHub Copilot
 
-Lire `AGENTS.md` et `brain/STATE.md`. Ne pas écrire dans `brain/inbox/`. Ne pas committer de secrets. Vérifier qu'un outil externe est vraiment disponible avant de l'utiliser.
+Lire `AGENTS.md` et `brain/STATE.md`. Docs cadrage : `OBJECTIVES`, `ROADMAP`, `PRINCIPLES`, `PROCESS`.  
+Ne pas écrire dans `brain/inbox/`. Local = SoT ; ClickUp = projection. Pas de secrets.

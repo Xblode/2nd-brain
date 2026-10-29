@@ -2,4 +2,4 @@
 description: Mémoire et continuité du projet
 alwaysApply: true
 ---
-Lire `AGENTS.md` et `brain/STATE.md` (état maître) avant une tâche substantielle ; compléter avec `OVERVIEW`, `ARCHITECTURE`, `DECISIONS`, `TASKS` selon le besoin. Mémoire = `brain/` ; système = `brain-main/` (dogfooding). Commandes : `brain-main/skills/COMMANDS.md`. En réflexion, `/cadrer` plutôt que coder. Toute écriture durable est proposée puis approuvée. Ne jamais écrire dans `brain/inbox/`. Pack web-starter optionnel seulement. ClickUp : `/clickup` + convention Second Brain uniquement.
+Lire `AGENTS.md` et `brain/STATE.md` avant une tâche substantielle ; compléter avec `OBJECTIVES`, `ROADMAP`, `PRINCIPLES`, `PROCESS`, `ARCHITECTURE`, `GLOSSARY`, `DECISIONS`, `TASKS` selon le besoin. Mémoire = `brain/` ; système = `brain-main/` (dogfooding). Commandes : `brain-main/skills/COMMANDS.md`. Pipeline : brainstorm → registre → `/build` → local → ClickUp. En réflexion, `/cadrer` plutôt que coder. Toute écriture durable est proposée puis approuvée. Ne jamais écrire dans `brain/inbox/`. Pack web-starter optionnel seulement. ClickUp : `/clickup` + convention Second Brain uniquement.

@@ -10,7 +10,7 @@ disable-model-invocation: true
 
 ## Lecture
 
-**`brain/STATE.md`** en maître. Compléments : `brain/OVERVIEW.md`, `brain/TASKS.md`, `brain/DECISIONS.md` (ouvertes). Ne pas inventer une date de sync absente. Ignorer les `docs/` web s’ils n’existent pas.
+**`brain/STATE.md`** en maître. Compléments : `brain/ROADMAP.md`, `brain/OBJECTIVES.md`, `brain/TASKS.md`, `brain/DECISIONS.md` (ouvertes), volume registre `proposed`. Ne pas inventer une date de sync absente. Ignorer les `docs/` web s’ils n’existent pas.
 
 ## Sortie
 

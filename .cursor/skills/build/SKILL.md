@@ -1,8 +1,8 @@
 ﻿---
 name: build
 description: >-
-  Construction après cadrage (brain-main dogfood ou template / pack web optionnel).
-  Commande /build — suivre brain-main/skills/build/SKILL.md.
+  Organisation globale du registre (puis ClickUp) ; sous-mode scaffold template /
+  dogfood. Commande /build — suivre brain-main/skills/build/SKILL.md.
 disable-model-invocation: true
 ---
 
@@ -10,4 +10,4 @@ disable-model-invocation: true
 
 Procédure canonique : `brain-main/skills/build/SKILL.md`. La lire et la suivre.
 
-Mémoire : `brain/STATE.md`. Pack web-starter optionnel seulement.
+Mémoire : `brain/STATE.md`, `brain/PROCESS.md`. Pack web-starter optionnel seulement.

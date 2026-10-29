@@ -1,7 +1,8 @@
 # Registre
 
-- **Role:** collections atomiques pour kinds sans foyer de synthèse (`fact`, `hypothesis`, `idea`, `issue`, `reference`).
-- **Scope:** un fichier collection par kind (ex. `facts.md`), jamais un fichier par idée.
-- **Boundaries:** décisions/questions → `brain/DECISIONS.md` ; tâches → `brain/TASKS.md`. Pas de création spéculative.
-- **Format:** Markdown + bloc `jsonl`, un objet JSON par ligne (DEC-009). Contrats : `taxonomy.yaml`, `registry-schema.json`.
-- **Status:** `ideas.md` prêt (jalon 1 — ne pas perdre d'idées) ; autres collections au besoin.
+Collections d’entrées atomiques hors `DECISIONS.md` / `TASKS.md` (DEC-006 / DEC-009).
+
+- Créer un fichier collection au **premier besoin** (`ideas.md`, `facts.md`, …).
+- Une ligne JSON par entrée dans un bloc `jsonl`.
+- **Status:** `ideas.md` prêt (anti-perte brainstorm V1) ; autres collections au besoin.
+- Promotion de masse des `proposed` → `/build` (voir `brain/PROCESS.md`).

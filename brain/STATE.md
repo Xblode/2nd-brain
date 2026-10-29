@@ -1,21 +1,21 @@
 # État du projet — Second Brain
 
-Point d'entrée opérationnel. Lire avant tout travail substantiel.
-Ce fichier décrit l'état réel, pas une cible.
+Point d’entrée opérationnel. Lire avant tout travail substantiel.
+Ce fichier décrit l’état réel, pas une cible.
 
 ```yaml
 updated: "2026-10-29"
 project: Second Brain
-phase: milestone_1
+phase: v1_pipeline
 runtime_status: not_implemented
-milestone: M1
-current_focus: "Jalon 1 — Chat → brain/ → ClickUp ; valider archi ; skills anti-perte"
-next_action: "Tester le flux M1 : message → /note → maj brain/ → /clickup (prévisualisation)."
+milestone: V1
+current_focus: "V1 — Prompt → brainstorm → registre → /build → local → ClickUp"
+next_action: "Valider docs cadrage obligatoires et tester /note puis /build (organisation)."
 active_tasks:
-  - TASK-007
-  - TASK-008
-  - TASK-009
-  - TASK-010
+  - TASK-011
+  - TASK-012
+  - TASK-013
+  - TASK-014
 blockers: []
 open_questions: []
 decisions:
@@ -30,14 +30,20 @@ decisions:
     - DEC-008
     - DEC-009
     - DEC-010
+    - DEC-011
   framing_closed:
     - OPEN-001
     - OPEN-002
     - OPEN-003
 canonical_sources:
   agents: AGENTS.md
-  overview: brain/OVERVIEW.md
+  state: brain/STATE.md
+  objectives: brain/OBJECTIVES.md
+  roadmap: brain/ROADMAP.md
+  principles: brain/PRINCIPLES.md
+  process: brain/PROCESS.md
   architecture: brain/ARCHITECTURE.md
+  glossary: brain/GLOSSARY.md
   decisions: brain/DECISIONS.md
   tasks: brain/TASKS.md
   ideas: brain/registry/ideas.md
@@ -53,14 +59,14 @@ canonical_sources:
 
 | Existe réellement | Seulement prévu / pas encore prouvé |
 | --- | --- |
-| Docs, conventions, skills textuels, DEC-001–010 | Runtime `core/`, parser, SQLite, MCP, CLI |
-| Mémoire `brain/` (STATE, OVERVIEW, ARCHITECTURE, DECISIONS, TASKS, inbox, registry/ideas, references, runtime) | Test manuel bout-en-bout M1 (preuve) |
-| Skills `/` ancrés sur `brain/` + anti-perte (`/note`, memory-policy) | Sync ClickUp automatisée |
-| Template `templates/project/brain/` aligné sur l’exemple | `/build` 100 % automatisé |
-| Contrats ClickUp + skill `/clickup` (prévisualisation) | Lot ClickUp réellement poussé et vérifié |
-| Pack `web-starter` (optionnel, hors M1) | Application web |
+| Docs cadrage obligatoires V1, conventions, skills textuels, DEC-001–011 | Runtime `core/`, parser, SQLite SoT, MCP, CLI |
+| Mémoire `brain/` (STATE, OBJECTIVES, ROADMAP, PRINCIPLES, PROCESS, ARCHITECTURE, GLOSSARY, registres) | Preuve bout-en-bout `/build` organisation + ClickUp |
+| Skills `/` ancrés sur `brain/` + anti-perte | Sync ClickUp automatisée |
+| Template `templates/project/brain/` à aligner V1 | `/build` scaffold 100 % automatisé |
+| Contrats ClickUp + skill `/clickup` (prévisualisation) | Lot ClickUp poussé et vérifié en prod |
+| Pack `web-starter` (optionnel, hors V1) | Application web |
 
-## Jalon 1 — rappel
+## Jalon V1 — rappel
 
-**Flux :** comprendre → ranger en local (`brain/`) → accord → projeter ClickUp.  
-**Détail / critères :** `OVERVIEW.md`. **Décision :** DEC-010. **Tâches :** TASK-007 … TASK-010.
+**Flux :** prompt → brainstorm → registre `proposed` → `/build` → validation → local → `/clickup`.  
+**Détail :** `PROCESS.md`, `ROADMAP.md`. **Décision :** DEC-011. **Tâches :** TASK-011 … TASK-014.

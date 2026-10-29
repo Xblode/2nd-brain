@@ -19,8 +19,11 @@ Source commune du Second Brain. Les projets n'en reçoivent pas une copie intég
 ## Règles de conception
 
 - Peu de Skills, des modules courts.
-- Le transport (MCP, CLI, éditeur) ne contient pas la logique métier.
+- Pipeline V1 : brainstorm → registre → `/build` → local → ClickUp (DEC-011).
+- Constitution = `conventions/` ; loi projet = `brain/*.md` ; procédures = `skills/`.
+- Le transport (MCP, CLI, éditeur) ne contient pas la logique métier — hors chemin critique V1.
 - Les fichiers canoniques priment sur SQLite.
 - L'Inbox n'est pas une cible d'écriture automatique.
 - Aucun secret dans Git.
 - Mise à jour template : `propose_only`, jamais écraser `copy_once`.
+

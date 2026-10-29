@@ -1,24 +1,29 @@
 # Mémoire de ce dépôt
 
-Mémoire du projet qui construit Second Brain. À ne pas confondre avec :
+Mémoire du projet qui construit Second Brain.  
+Ne pas confondre avec `brain-main/` (système) ni `brain-main/templates/project/brain/` (modèle générique).
 
-- `brain-main/` — règles et contrats communs ;
-- `brain-main/templates/project/brain/` — modèle générique pour d'autres projets.
+## Docs de cadrage obligatoires
 
-## Navigation
+Lire dans cet ordre selon le besoin :
 
-1. Lire `STATE.md` en premier.
-2. Consulter ensuite uniquement les fichiers pertinents.
-3. `OVERVIEW.md` — vision / brief.
-4. `ARCHITECTURE.md` — zones et responsabilités.
-5. `DECISIONS.md` — décisions et questions (collection JSONL).
-6. `TASKS.md` — tâches (collection JSONL).
-7. `registry/` / `references/` — au besoin.
-8. Ne jamais écrire automatiquement dans `inbox/`.
-9. Ne pas créer un fichier par idée ou conversation.
+1. `STATE.md` — état actuel, priorités, blocages
+2. `OBJECTIVES.md` — vision, usagers, périmètre
+3. `ROADMAP.md` — jalons et critères de passage
+4. `PRINCIPLES.md` — règles non négociables + autorité des conventions
+5. `PROCESS.md` — pipeline idée → registre → `/build` → ClickUp
+6. `ARCHITECTURE.md` — zones et modes
+7. `GLOSSARY.md` — vocabulaire et cycle de vie
 
-Ce dossier est l’**exemple pratique** pour les commandes `/` et le dogfooding : on fait évoluer `brain-main/` en s’appuyant sur cette mémoire.
+## Registres (données)
 
-## Format des collections
+- `DECISIONS.md` — décisions et questions (JSONL)
+- `TASKS.md` — tâches (JSONL)
+- `registry/` — autres kinds (`ideas`, etc.)
+- `references/` — pointeurs externes au besoin
 
-Conteneur Markdown ; entrées = objets JSON, une ligne physique chacun (DEC-009). Validation : `registry-schema.json` + `taxonomy.yaml`.
+## Règles courtes
+
+- Ne jamais écrire automatiquement dans `inbox/`.
+- Ne pas créer un fichier Markdown par idée : utiliser le registre.
+- Format registre actuel : conteneur Markdown + JSONL (DEC-009). Contrats : `registry-schema.json`, `taxonomy.yaml`.

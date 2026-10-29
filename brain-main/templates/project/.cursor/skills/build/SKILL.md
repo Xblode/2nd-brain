@@ -1,7 +1,7 @@
 ﻿---
 name: build
 description: >-
-  Construction après cadrage (template / brain-main / pack web optionnel).
+  Organisation globale du registre (puis ClickUp) ; sous-mode scaffold.
   Commande /build — suivre brain-main/skills/build/SKILL.md.
 disable-model-invocation: true
 ---
@@ -10,4 +10,4 @@ disable-model-invocation: true
 
 Procédure canonique : `brain-main/skills/build/SKILL.md`. La lire et la suivre.
 
-Mémoire : `brain/STATE.md`. Pack web-starter optionnel seulement.
+Mémoire : `brain/STATE.md`, `brain/PROCESS.md`. Pack web-starter optionnel seulement.

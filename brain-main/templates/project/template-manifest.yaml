@@ -11,16 +11,21 @@ paths:
   .second-brain.yaml: copy_once
   brain/README.md: sync_shared
   brain/STATE.md: copy_once
-  brain/OVERVIEW.md: copy_once
+  brain/OBJECTIVES.md: copy_once
+  brain/ROADMAP.md: copy_once
+  brain/PRINCIPLES.md: copy_once
+  brain/PROCESS.md: copy_once
   brain/ARCHITECTURE.md: copy_once
+  brain/GLOSSARY.md: copy_once
+  brain/OVERVIEW.md: sync_shared
   brain/DECISIONS.md: copy_once
   brain/TASKS.md: copy_once
   brain/inbox/README.md: sync_shared
   brain/registry/README.md: sync_shared
   brain/registry/ideas.md: copy_once
-
   brain/references/README.md: sync_shared
   brain/runtime/README.md: sync_shared
+
   .clickup/README.md: sync_shared
   .clickup/mapping.yaml: copy_once
   .notion/README.md: sync_shared

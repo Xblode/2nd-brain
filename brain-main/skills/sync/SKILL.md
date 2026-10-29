@@ -16,8 +16,10 @@ Voir ce qui manque ou est en retard dans la mémoire projet, sans réécrire un 
 
 Structure **`brain/`** — exemple pratique : le `brain/` de Second Brain + modèle `brain-main/templates/project/brain/` + `INFORMATION_MAP.yaml` :
 
-- `STATE.md`, `OVERVIEW.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `TASKS.md`, `README.md`
+- Docs cadrage : `STATE.md`, `OBJECTIVES.md`, `ROADMAP.md`, `PRINCIPLES.md`, `PROCESS.md`, `ARCHITECTURE.md`, `GLOSSARY.md`, `README.md`
+- Registres : `DECISIONS.md`, `TASKS.md`
 - `inbox/`, `registry/`, `references/`, `runtime/` (README / emplacements)
+- `OVERVIEW.md` : pointeur optionnel seulement (plus SoT)
 
 Pack `web-starter` / `docs/…` : comparer **seulement** si `STATE` indique que le pack est installé ou que le projet est explicitement web.
 

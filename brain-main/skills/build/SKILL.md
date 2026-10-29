@@ -1,51 +1,53 @@
 ---
 name: build
 description: >-
-  Après cadrage, applique un lot de construction : socle projet (template),
-  évolutions brain-main en dogfooding, ou pack web optionnel. À utiliser avec /build.
+  Organisation globale du registre (analyse, tri, validation, écriture locale,
+  puis projection ClickUp). Sous-mode scaffold : template / dogfood brain-main.
+  À utiliser avec /build.
 disable-model-invocation: true
 ---
 
-# /build — Construction après décision
+# /build — Organisation globale (DEC-011)
 
-## Prérequis
+Lire d’abord : `brain/STATE.md`, `brain/PROCESS.md`, `brain/PRINCIPLES.md`, `brain/OBJECTIVES.md`, `brain/ROADMAP.md`, registres (`DECISIONS`, `TASKS`, `registry/`).
 
-`brain/STATE.md` (et idéalement `OVERVIEW` / `DECISIONS`) contient un dossier de décision, ou l’utilisateur confirme construire avec les hypothèses affichées. Sinon renvoyer vers `/cadrer`.
+Autorité : conventions `brain-main/conventions/` (format / cycle de vie) ; docs `brain/` (quoi / quand projet). Ne pas inventer de règle locale.
 
-Lire d’abord : `brain/STATE.md`, `brain/OVERVIEW.md`, `brain/ARCHITECTURE.md`, `brain/DECISIONS.md`, `brain/TASKS.md`.  
-Compléments selon le lot : `brain-main/templates/project/template-manifest.yaml` (DEC-008), et seulement si profil web retenu `templates/web-starter/README.md` + `STACK_PROFILES.md`.
+## Mode A — Organisation registre (défaut)
 
-## Deux modes
+Traite les entrées `proposed` (et lots à trier) accumulées en brainstorming.
 
-### A — Dogfooding Second Brain (ce dépôt)
+1. Inventorier les entrées pending (id, kind, title, contradictions, alignement objectifs/roadmap).
+2. Proposer un plan de tri par entrée ou groupe :
+   - garder / fusionner / différer / rejeter ;
+   - promouvoir → `task` / `decision` / patch doc cadrage (nouvelle entrée liée `derived_from` si besoin) ;
+   - signaler conflits et priorités.
+3. **Validation humaine sélective** :
+   - lot global pour le triage évident ;
+   - questions explicites pour conflits, priorités, suppressions de sens, création/modif de docs cadrage.
+4. Attendre l’accord sur **ce lot exact**. Noter dans `STATE.md` : `Build: proposé` puis `Build: appliqué` après écriture.
+5. Appliquer uniquement l’approuvé en local (`add_entry` / `patch` / `supersede` ; relire avant écriture). Pas d’Inbox.
+6. Proposer ensuite `/clickup` pour projeter le sous-ensemble local validé (prévisualisation → accord → push). Local reste SoT.
 
-Objectif : faire avancer **`brain-main/`** (skills, conventions, docs, emplacements runtime) en s’appuyant sur la mémoire **`brain/`**.
+## Mode B — Scaffold / dogfood (sous-mode)
 
-1. Lister le lot exact (fichiers `brain-main/…` et éventuelles màj `brain/TASKS.md` / `STATE.md`).
-2. Noter dans `STATE.md` : `Build: proposé`. Attendre accord sur **ce lot**.
-3. Appliquer uniquement le périmètre approuvé. Pas d’installation stack web sauf demande explicite.
-4. Mettre à jour `brain/STATE.md` / `TASKS.md` avec le résultat réel. `Build: appliqué`.
+Seulement si l’utilisateur demande explicitement un scaffold, une install template, ou un lot de construction `brain-main` / pack web.
 
-### B — Nouveau projet / template
+### B1 — Dogfooding Second Brain
 
-1. Proposer ce qui est copié depuis `templates/project/` (manifeste DEC-008) vs laissé de côté.
-2. **Pack `web-starter` : optionnel**, seulement si le cadrage a retenu un profil web. Sinon ne pas l’installer.
-3. Noter `Build: proposé` dans `STATE.md`. Attendre accord.
-4. Copier selon le manifeste sans écraser le project-owned (`brain/STATE.md`, mappings, etc.).
-5. Si pack web accepté : copier docs/rules/prompts retenus ; installer la stack du profil ; vérifier la doc officielle ; rapporter les résultats réels.
-6. Un générateur qui refuse un dossier non vide : générer en temporaire, fusionner sans écraser `brain/`, `.cursor/`, `.github/`, docs déjà validés.
-7. Skills optionnels du pack → `.cursor/skills/` seulement si listés dans l’accord.
-8. Noter `Build: installé` puis validations / commit si demandés (`Build: commité`).
+1. Lister le lot exact (fichiers `brain-main/…` et màj `brain/` éventuelles).
+2. Accord sur ce lot → appliquer → maj `STATE` / `TASKS`.
 
-## Tâches et ClickUp
+### B2 — Nouveau projet / template
 
-- Plan local : toujours `brain/TASKS.md` (JSONL DEC-009).
-- Roadmap `docs/06-delivery/…` : seulement si pack web présent et utile.
-- Projection ClickUp : lot séparé via `/clickup`. Sans connexion : rester en local.
+1. Proposer copie depuis `templates/project/` (manifeste DEC-008).
+2. Pack `web-starter` : optionnel, seulement si profil web retenu.
+3. Accord → copier sans écraser le project-owned → noter résultat.
 
 ## Interdit
 
-- Imposer `web-starter` comme étape obligatoire.
-- Réutiliser IDs ClickUp d’un autre projet.
+- Promouvoir en silence tout le registre sans validation.
 - Écrire dans Inbox.
-- Écraser la mémoire `brain/` existante pour coller à un modèle générique.
+- Prendre ClickUp comme SoT.
+- Imposer `web-starter`.
+- Lancer le mode scaffold sans demande explicite alors que des entrées `proposed` attendent un triage.

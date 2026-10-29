@@ -1,7 +1,7 @@
 version: 1
 purpose: >-
-  Carte des emplacements. Format registre : collections Markdown + JSONL
-  une entrée par ligne physique (DEC-006 principes, DEC-009 sérialisation).
+  Carte des emplacements. Docs cadrage obligatoires = SoT narrative (DEC-011).
+  Registre : collections Markdown + JSONL une entrée par ligne (DEC-006, DEC-009).
 canonical_sources:
   system_rules: brain-main/conventions/
   system_docs: brain-main/docs/
@@ -9,18 +9,23 @@ canonical_sources:
   taxonomy: brain-main/conventions/taxonomy.yaml
   registry_schema: brain-main/conventions/registry-schema.json
   memory_policy: brain-main/conventions/memory-policy.md
+  naming: brain-main/conventions/naming.md
   skill: brain-main/skills/second-brain/SKILL.md
   clickup_specialist: brain-main/skills/clickup/SKILL.md
+  commands: brain-main/skills/COMMANDS.md
   project_state: brain/STATE.md
-  project_overview: brain/OVERVIEW.md
+  project_objectives: brain/OBJECTIVES.md
+  project_roadmap: brain/ROADMAP.md
+  project_principles: brain/PRINCIPLES.md
+  project_process: brain/PROCESS.md
   project_architecture: brain/ARCHITECTURE.md
+  project_glossary: brain/GLOSSARY.md
   project_decisions: brain/DECISIONS.md
   project_tasks: brain/TASKS.md
   project_registry: brain/registry/
   project_references: brain/references/
   project_brain_readme: brain/README.md
-  # Exemple pratique / dogfooding : le brain/ de ce dépôt Second Brain.
-  # Pack web-starter docs/ : optionnel, jamais SoT mémoire.
+  # OVERVIEW.md : pointeur de compatibilité seulement — plus SoT.
 project_template: brain-main/templates/project/
 project_integrations:
   github: .github/
@@ -35,9 +40,12 @@ write_policy:
   inbox_automated_writes: forbidden
   external_side_effects: require_explicit_approval
   sqlite_is_canonical: false
+  brainstorm_accumulates_proposed: true
+  promotion_via: /build
 registry_format:
   container: markdown
   entry_serialization: jsonl_one_object_per_physical_line
   decision: DEC-009
+  post_v1_target: pure_jsonl_files_with_shared_io_interface
 secrets:
   store_in_git: false

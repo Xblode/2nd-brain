@@ -1,19 +1,25 @@
 # Mémoire du projet
 
-Mémoire propre à ce projet. Distincte de `brain-main/` (non recopié ici).  
-Référence de structure : le `brain/` du dépôt Second Brain (exemple pratique).
+Mémoire propre à ce projet. Distincte de `brain-main/` (non recopié ici).
 
-| Chemin | Rôle |
-| --- | --- |
-| `STATE.md` | État, blocages, prochaine action — **lire en premier** |
-| `OVERVIEW.md` | Vision / brief |
-| `ARCHITECTURE.md` | Zones et responsabilités |
-| `DECISIONS.md` | Décisions et questions (JSONL) |
-| `TASKS.md` | Tâches (JSONL) |
-| `inbox/` | Capture manuelle uniquement — aucune écriture automatisée |
-| `registry/` | Autres kinds, au besoin |
-| `references/` | Pointeurs externes |
-| `runtime/` | Index local dérivé (hors Git) — jamais SoT |
+## Docs de cadrage obligatoires
 
-Contrats : `brain-main/conventions/` (`taxonomy.yaml`, `registry-schema.json`, DEC-009).  
-Ne pas créer un fichier par idée. Les docs d’un pack web (`docs/…`) sont optionnels et ne remplacent pas cette mémoire.
+1. `STATE.md` — état, blocages, prochaine action
+2. `OBJECTIVES.md` — vision / usagers / périmètre
+3. `ROADMAP.md` — jalons
+4. `PRINCIPLES.md` — non négociables + autorité
+5. `PROCESS.md` — pipeline idée → `/build` → ClickUp
+6. `ARCHITECTURE.md` — zones et modes
+7. `GLOSSARY.md` — vocabulaire
+
+## Registres
+
+- `DECISIONS.md` — décisions et questions (JSONL)
+- `TASKS.md` — tâches (JSONL)
+- `registry/` — autres kinds au besoin
+- `references/` — pointeurs externes
+- `inbox/` — capture manuelle uniquement
+- `runtime/` — index dérivé (jamais SoT)
+
+Contrats : `brain-main/conventions/` (DEC-006/009/011).  
+Ne pas créer un fichier Markdown par idée. Pack web `docs/…` optionnel.

@@ -10,7 +10,7 @@ disable-model-invocation: true
 
 ## Prérequis
 
-Cadrage suffisant dans `brain/OVERVIEW.md` / `brain/STATE.md` (et décisions utiles). Profil stack seulement si le lot est applicatif web.
+Cadrage suffisant dans `brain/OBJECTIVES.md` / `brain/STATE.md` / `brain/PROCESS.md` (et décisions utiles). Profil stack seulement si le lot est applicatif web.
 
 ## Où écrire
 

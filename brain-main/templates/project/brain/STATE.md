@@ -15,8 +15,13 @@ open_questions: []
 decisions:
   adopted: []
 canonical_sources:
-  overview: brain/OVERVIEW.md
+  state: brain/STATE.md
+  objectives: brain/OBJECTIVES.md
+  roadmap: brain/ROADMAP.md
+  principles: brain/PRINCIPLES.md
+  process: brain/PROCESS.md
   architecture: brain/ARCHITECTURE.md
+  glossary: brain/GLOSSARY.md
   decisions: brain/DECISIONS.md
   tasks: brain/TASKS.md
 ```
