@@ -10,5 +10,5 @@ disable-model-invocation: true
 
 Procédure canonique : `brain-main/skills/note/SKILL.md`. La lire et la suivre.
 
-Mémoire : `brain/`. Anti-perte : toute idée a une destination proposée.  
-Puis `/clickup` pour projection (lot séparé).
+Mémoire : `brain/`. Anti-perte : toute idée a une destination proposée (`proposed`).  
+Organisation de masse : `/build` ; projection : `/clickup`.
