@@ -1,38 +1,61 @@
-# Taxonomie proposée, non adoptée.
-# Ne pas l'utiliser comme contrat d'implémentation tant que le modèle de données
-# n'est pas décidé dans brain/DECISIONS.md.
-status: proposed
+# Taxonomie adoptée (DEC-006 / OPEN-001 résolu).
+# Contrat d'implémentation pour les entrées de registre.
+status: adopted
+decision: DEC-006
 kinds:
-  - IDEA
-  - HYPOTHESIS
-  - DECISION
-  - REQUIREMENT
-  - FACT
-  - QUESTION
-  - PLAN
-  - TASK
-  - REFERENCE
-  - INSIGHT
-  - ISSUE
-  - NOTE
+  - fact
+  - hypothesis
+  - idea
+  - question
+  - decision
+  - task
+  - issue
+  - reference
+id_prefixes:
+  fact: FACT-
+  hypothesis: HYP-
+  idea: IDEA-
+  question: OPEN-
+  decision: DEC-
+  task: TASK-
+  issue: ISSUE-
+  reference: REF-
 statuses:
-  - PROPOSED
-  - OPEN
-  - ACCEPTED
-  - REJECTED
-  - SUPERSEDED
-  - RESOLVED
+  - proposed
+  - accepted
+  - rejected
+  - deferred
+  - active
+  - blocked
+  - resolved
+  - settled
+  - superseded
+# Statuts typiques par kind (convention ; les invalides sont rejetés)
+status_by_kind:
+  decision: [proposed, accepted, rejected, deferred, settled, superseded]
+  task: [proposed, accepted, rejected, deferred, active, blocked, resolved, superseded]
+  issue: [proposed, accepted, rejected, deferred, active, blocked, resolved, superseded]
+  question: [proposed, accepted, rejected, deferred, active, resolved, superseded]
+  fact: [proposed, accepted, rejected, deferred, superseded]
+  reference: [proposed, accepted, rejected, deferred, superseded]
+  idea: [proposed, accepted, rejected, deferred, superseded]
+  hypothesis: [proposed, accepted, rejected, deferred, superseded]
 scopes:
-  - GLOBAL
-  - SYSTEM
-  - PROJECT
-  - COMPONENT
-  - WORKSTREAM
+  - system
+  - project
+  - component
+certainty:
+  - verified
+  - likely
+  - unknown
 relations:
-  - SUPPORTS
-  - CONTRADICTS
-  - SUPERSEDES
-  - DERIVED_FROM
-  - IMPLEMENTS
-  - RELATED_TO
-  - DUPLICATE_OF
+  - supports
+  - contradicts
+  - supersedes
+  - derived_from
+  - implements
+  - related_to
+  - blocks
+  - duplicate_of
+# Hors registre (pas d'entrées atomiques) : plans détaillés, notes de session, contenus Inbox.
+# Non adoptés : requirement, plan, insight, note.

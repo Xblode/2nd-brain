@@ -6,8 +6,8 @@
 ## Résumé
 
 - **Objectif :** une mémoire de projet locale, lisible et contrôlée, pour les agents et les humains.
-- **Phase :** squelette documentaire. L'arborescence et les règles communes sont posées. Le modèle de données n'est pas choisi.
-- **État :** les dossiers cibles existent. Aucun composant d'exécution n'est implémenté.
+- **Phase :** squelette documentaire. Le modèle de données et le cycle de vie sont adoptés (DEC-006). Aucun composant d'exécution n'est implémenté.
+- **État :** arborescence et contrats de registre posés. Parser, MCP, CLI, index SQLite absents.
 
 ## Ce qui existe vraiment
 
@@ -15,7 +15,8 @@
 - Documents de vision dans `brain-main/docs/00-vision.md` à `05-sources-verite-integrations.md`.
 - Conventions, Skill Second Brain, spécialiste ClickUp (`brain-main/skills/clickup/SKILL.md`) et contrats d'intégration, sous forme de textes. Le spécialiste ne connecte pas ClickUp.
 - `AGENTS.md` comme base d'instructions commune. `CLAUDE.md` et `.github/copilot-instructions.md` ne font qu'adapter cette base.
-- Décisions acceptées D-001 à D-005 dans `brain/DECISIONS.md`.
+- Décisions acceptées DEC-001 à DEC-006 dans `brain/DECISIONS.md` (alias historiques `D-00x`).
+- Contrats registre adoptés : `brain-main/conventions/taxonomy.yaml`, `registry-schema.json`.
 
 La copie locale de travail peut différer de `d79fb86`. Vérifier `git status` avant de considérer un fichier comme publié.
 
@@ -23,15 +24,13 @@ La copie locale de travail peut différer de `d79fb86`. Vérifier `git status` a
 
 La présence de ces dossiers ne signifie pas qu'ils fonctionnent :
 
-- `brain-main/core/` : registre, recherche, validation, permissions, index
+- `brain-main/core/` : registre runtime, recherche, validation, permissions, index
 - `brain-main/mcp-server/`
 - `brain-main/cli/`
 - `brain-main/scripts/`
 - index SQLite sous `brain/runtime/`
-- entrées de registre sous `brain/registry/`
+- entrées de registre sous `brain/registry/` (foyer réservé ; pas encore de fichier collection)
 - connexion réelle à GitHub, ClickUp ou Notion
-
-`taxonomy.yaml` et `registry-schema.json` sont des emplacements réservés, pas un format adopté.
 
 ## Décisions tenues
 
@@ -42,20 +41,22 @@ La présence de ces dossiers ne signifie pas qu'ils fonctionnent :
 - `brain/inbox/` est une capture manuelle. Aucune IA n'y écrit.
 - `.clickup/` et `.notion/` documentent des correspondances. Ils ne connectent pas de MCP.
 - Aucun secret dans Git.
+- Registre Markdown en collections, IDs stables par kind, cycle de vie explicite (DEC-006 ; OPEN-001 résolu).
 
 ## Décisions ouvertes
 
-Ne pas les trancher dans le code ou dans un schéma.
+Ne pas les trancher dans le code sans validation humaine.
 
 | Id | Sujet |
 | --- | --- |
-| O-001 | Format du registre, identifiants, relations, métadonnées, cycle de vie et statuts |
-| O-002 | Réconciliation entre le local, ClickUp et Notion, et propriétaire de chaque champ |
-| O-003 | Ce que le template copie, ce qui reste lié à `brain-main/`, et comment une mise à jour préserve les personnalisations |
+| OPEN-002 | Réconciliation entre le local, ClickUp et Notion, et propriétaire de chaque champ |
+| OPEN-003 | Ce que le template copie, ce qui reste lié à `brain-main/`, et comment une mise à jour préserve les personnalisations |
+
+Alias historiques : `O-002`, `O-003`. OPEN-001 (alias `O-001`) est résolu par DEC-006.
 
 ## Prochaine action utile
 
-Choisir le modèle de données canonique et le cycle de vie d'une information (O-001). Le registre, le MCP, la CLI et le déploiement du template en dépendent.
+Trancher OPEN-002 (sync / propriété des champs) ou créer de premières entrées pilotes au format DEC-006 si un besoin réel apparaît. Le MCP, la CLI et le déploiement du template restent bloqués tant que OPEN-002 / OPEN-003 ne sont pas tranchés selon le besoin.
 
 ## Documents de référence
 

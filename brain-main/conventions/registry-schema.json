@@ -1,8 +1,122 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.invalid/second-brain/registry-entry.schema.json",
-  "title": "Entrée de registre — non adoptée",
-  "description": "Emplacement réservé. Le format canonique (Markdown, JSON ou autre), les identifiants, les relations et les métadonnées ne sont pas décidés. Ne pas implémenter de persistance à partir de ce fichier.",
+  "title": "Entrée de registre Second Brain",
+  "description": "Schéma d'une entrée atomique du registre (DEC-006). Source de vérité : Markdown collection avec bloc YAML fenced `entry`. SQLite reste un index dérivé.",
   "type": "object",
-  "additionalProperties": true
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "kind",
+    "status",
+    "title",
+    "created",
+    "updated",
+    "sources",
+    "relations"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Identifiant stable, jamais réutilisé. Préfixe selon kind (FACT-, HYP-, IDEA-, OPEN-, DEC-, TASK-, ISSUE-, REF-) + numéro monotone.",
+      "pattern": "^(FACT|HYP|IDEA|OPEN|DEC|TASK|ISSUE|REF)-[0-9]{3,}$"
+    },
+    "kind": {
+      "type": "string",
+      "description": "Type d'entrée (taxonomie adoptée).",
+      "enum": [
+        "fact",
+        "hypothesis",
+        "idea",
+        "question",
+        "decision",
+        "task",
+        "issue",
+        "reference"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Statut dans le cycle de vie. Les combinaisons kind/status invalides sont rejetées par convention.",
+      "enum": [
+        "proposed",
+        "accepted",
+        "rejected",
+        "deferred",
+        "active",
+        "blocked",
+        "resolved",
+        "settled",
+        "superseded"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "description": "Titre sur une ligne.",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "description": "Résumé court. Optionnel si le corps prose de la section Markdown suffit."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date de création ISO (YYYY-MM-DD)."
+    },
+    "updated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date de dernière mise à jour ISO (YYYY-MM-DD)."
+    },
+    "sources": {
+      "type": "array",
+      "description": "Liens fichiers, URLs, ou mention « conversation » avec date éventuelle.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "relations": {
+      "type": "array",
+      "description": "Liens vers d'autres entrées.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "target_id"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "supports",
+              "contradicts",
+              "supersedes",
+              "derived_from",
+              "implements",
+              "related_to",
+              "blocks",
+              "duplicate_of"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "pattern": "^(FACT|HYP|IDEA|OPEN|DEC|TASK|ISSUE|REF)-[0-9]{3,}$"
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "string",
+      "enum": ["system", "project", "component"]
+    },
+    "certainty": {
+      "type": "string",
+      "enum": ["verified", "likely", "unknown"]
+    },
+    "superseded_by": {
+      "type": "string",
+      "description": "ID de l'entrée qui remplace celle-ci.",
+      "pattern": "^(FACT|HYP|IDEA|OPEN|DEC|TASK|ISSUE|REF)-[0-9]{3,}$"
+    }
+  }
 }

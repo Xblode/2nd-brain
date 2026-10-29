@@ -11,4 +11,12 @@ Créer un document seulement s'il a une portée durable, un lecteur identifiable
 
 Une proposition indique : cible, opération, raison, contenu ou diff, sources, et risque de conflit. L'application relit la cible avant d'écrire.
 
-Le format du registre et le cycle de vie d'une entrée ne sont pas fixés. Ne pas les inventer dans un fichier technique tant que `brain/DECISIONS.md` ne les marque pas comme acceptés.
+## Registre et cycle de vie (DEC-006)
+
+- Format canonique : Markdown structuré en collections. Contrats : `taxonomy.yaml`, `registry-schema.json`.
+- Foyers : décisions/questions → `brain/DECISIONS.md` ; tâches → `brain/TASKS.md` ; autres kinds → `brain/registry/{kind}s.md` au premier besoin.
+- Toute nouvelle entrée durable démarre en `proposed` (sauf capture Inbox, hors registre).
+- Seul un humain fait passer `proposed` → `accepted` | `rejected` | `deferred` (DEC-003).
+- Après acceptation : `decision` → `settled` ; `task`/`issue` → `active` puis `blocked`|`resolved` ; `question` → `active` jusqu'à `resolved` ; `fact`/`reference` restent `accepted` (ou `superseded`) ; `idea`/`hypothesis` : `accepted` = on garde ; promotion = nouvelles entrées liées (`derived_from`), pas de changement de kind in-place.
+- Contradiction : lier `contradicts`, ne pas écraser.
+- Remplacement : nouvelle entrée + `supersedes` ; l'ancienne passe `superseded`.

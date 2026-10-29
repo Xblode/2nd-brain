@@ -26,12 +26,12 @@ Ce fichier définit les règles durables applicables aux agents qui travaillent 
 
 Second Brain est actuellement traité comme un squelette documentaire et architectural. Ne présenter ni le registre, ni la recherche, ni l'index, ni la CLI, ni le serveur MCP, ni les scripts de déploiement comme implémentés sans vérifier le code et les validations correspondantes.
 
-Ne pas trancher silencieusement les sujets explicitement ouverts dans `brain/STATE.md` ou `brain/DECISIONS.md`, notamment :
+Le format du registre, les identifiants, les relations et le cycle de vie sont tranchés (DEC-006) : voir `brain/DECISIONS.md`, `brain-main/conventions/taxonomy.yaml` et `registry-schema.json`. Ne pas inventer un autre schéma.
 
-- le format du registre canonique, ses identifiants et ses relations ;
-- le cycle de vie d'une information et les transitions de statut ;
-- la réconciliation et la synchronisation entre le stockage local, ClickUp et Notion ;
-- la façon de déployer et mettre à jour les templates sans écraser les personnalisations.
+Ne pas trancher silencieusement les sujets encore ouverts dans `brain/STATE.md` ou `brain/DECISIONS.md`, notamment :
+
+- la réconciliation et la synchronisation entre le stockage local, ClickUp et Notion, et la propriété des champs (OPEN-002) ;
+- la façon de déployer et mettre à jour les templates sans écraser les personnalisations (OPEN-003).
 
 Quand une décision est nécessaire, présenter les options, compromis, risques et recommandation. Enregistrer une décision uniquement lorsqu'elle est confirmée par un humain.
 

@@ -3,7 +3,7 @@
 ## Sources
 
 1. Fichiers canoniques, lisibles et versionnés.
-2. Registre : éléments atomiques. Le format n'est pas choisi.
+2. Registre : éléments atomiques en Markdown collection (DEC-006). Schéma : `conventions/registry-schema.json` ; taxonomie : `conventions/taxonomy.yaml`.
 3. Documents de synthèse : état, décisions, tâches, architecture.
 4. Index SQLite local, reconstructible, jamais seule copie d'une décision.
 5. Journaux techniques temporaires, distincts de la mémoire durable.
@@ -12,6 +12,12 @@ Une information importante doit pouvoir se relire dans un fichier. Le registre e
 
 Les préférences récurrentes peuvent être suggérées. Une préférence confirmée et une inférence restent distinctes. Changer une règle commune demande une décision explicite dans `brain-main/`.
 
-## Pas encore décidé
+## Cycle de vie (DEC-006)
 
-Le cycle de vie d'une information (création, proposition, validation, remplacement, contradiction) et le modèle de données qui le porte. Voir `brain/DECISIONS.md`.
+Création en `proposed` → validation humaine (`accepted` / `rejected` / `deferred`) → selon le kind : `settled`, `active`, `blocked`, `resolved`, `superseded`. Voir `conventions/memory-policy.md`.
+
+Foyers d'écriture : `brain/DECISIONS.md` (décisions, questions), `brain/TASKS.md` (tâches), `brain/registry/` (autres kinds, au besoin). Pas un fichier par idée.
+
+## Encore ouvert
+
+Réconciliation local / ClickUp / Notion et propriété des champs (OPEN-002). Déploiement du template (OPEN-003).
