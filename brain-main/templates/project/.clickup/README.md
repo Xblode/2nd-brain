@@ -16,6 +16,6 @@ Convention Second Brain (DEC-007). ClickUp ne découvre pas ce dossier et il ne 
 
 Le champ `list` d’une entrée locale utilise la clé (`LIST.TASKS`), pas le nom affiché.
 
-Après un push réussi : mettre à jour `clickup.task_id`, `list_id`, `last_pushed` sur l’entrée (voir `brain-main/skills/clickup/modules/sync.md`).
+Après un push réussi : mettre à jour `clickup.task_id`, `list_id`, `last_pushed` sur l’entrée (voir `{brain_main_path}/skills/clickup/modules/sync.md`).
 
 Laisser `enabled: false` tant que les listes et le `status_map` utiles ne sont pas renseignés. `source_of_truth` doit rester `local`.

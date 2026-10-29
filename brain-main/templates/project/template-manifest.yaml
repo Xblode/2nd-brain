@@ -1,23 +1,28 @@
 # DEC-008 — Manifeste du template projet
 # Politiques : copy_once | sync_shared | link_only (link_only = jamais dans le projet)
+# Installe le profil Second Brain complet (naming.md) : socle + OVERVIEW/ARCHITECTURE/
+# DECISIONS/TASKS + ideas.md (exception anti-perte). Pas le socle minimal seul.
 version: 1
 decision: DEC-008
 template_id: project
+profile: second_brain_complete
 
 # Fichiers installés dans le dépôt cible
 paths:
   AGENTS.md: sync_shared
   CLAUDE.md: sync_shared
   .second-brain.yaml: copy_once
+  # Socle minimal
   brain/README.md: sync_shared
   brain/STATE.md: copy_once
+  # Profil complet (commandes /cadrer, /note, /audit, /sync)
   brain/OVERVIEW.md: copy_once
   brain/ARCHITECTURE.md: copy_once
   brain/DECISIONS.md: copy_once
   brain/TASKS.md: copy_once
   brain/inbox/README.md: sync_shared
   brain/registry/README.md: sync_shared
-  brain/registry/ideas.md: copy_once
+  brain/registry/ideas.md: copy_once  # systématique (anti-perte) ; autres collections = 1er besoin
 
   brain/references/README.md: sync_shared
   brain/runtime/README.md: sync_shared

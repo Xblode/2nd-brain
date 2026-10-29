@@ -6,6 +6,13 @@ Détails de fond : `memory-policy.md`, `naming.md`, `templates/README.md`, `skil
 
 **Alias historiques (lecture seule) :** `D-00x` → `DEC-00x`, `O-00x` → `OPEN-00x`.
 
+## Proposed
+
+```jsonl
+{"id":"DEC-011","kind":"decision","status":"proposed","title":"Pas de parser JSONL automatique pendant M1","summary":"Pendant M1, pas de parser JSONL automatique — classement uniquement via skills textuels, jusqu’à clôture TASK-010.","created":"2026-10-29","updated":"2026-10-29","sources":["conversation","test M1 TASK-008"],"relations":[{"type":"related_to","target_id":"TASK-010"},{"type":"related_to","target_id":"DEC-009"},{"type":"related_to","target_id":"DEC-010"}],"scope":"system"}
+{"id":"DEC-012","kind":"decision","status":"proposed","title":"Entrées du test M1 restent proposed","summary":"Les 3 messages de test TASK-008 (et leurs entrées dérivées) restent en status proposed jusqu’à revue humaine explicite.","created":"2026-10-29","updated":"2026-10-29","sources":["conversation","test M1 TASK-008"],"relations":[{"type":"related_to","target_id":"TASK-008"},{"type":"related_to","target_id":"DEC-003"}],"scope":"system"}
+```
+
 ## Settled
 
 ```jsonl

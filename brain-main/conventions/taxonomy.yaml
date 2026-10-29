@@ -59,6 +59,8 @@ relations:
   - implements
   - related_to
   - blocks
+  - depends_on
   - duplicate_of
+# depends_on : la tâche courante dépend de target_id (inverse naturel de blocks).
 # Hors registre (pas d'entrées atomiques) : plans détaillés, notes de session, contenus Inbox.
 # Non adoptés : requirement, plan, insight, note.

@@ -9,14 +9,21 @@ canonical_sources:
   taxonomy: brain-main/conventions/taxonomy.yaml
   registry_schema: brain-main/conventions/registry-schema.json
   memory_policy: brain-main/conventions/memory-policy.md
-  skill: brain-main/skills/second-brain/SKILL.md
+  naming: brain-main/conventions/naming.md
+  # Points d'entrée commandes (prioritaires pour les IA)
+  commands_catalog: brain-main/skills/COMMANDS.md
+  command_skills: brain-main/skills/{cadrer,build,go,statut,note,sync,spec,faire,ui,done,audit,fin}/
+  skill_general: brain-main/skills/second-brain/SKILL.md
   clickup_specialist: brain-main/skills/clickup/SKILL.md
+  # Emplacements prévus (README only) : research, planning, implementation, review, memory
+  skill_placeholders: brain-main/skills/{research,planning,implementation,review,memory}/
   project_state: brain/STATE.md
   project_overview: brain/OVERVIEW.md
   project_architecture: brain/ARCHITECTURE.md
   project_decisions: brain/DECISIONS.md
   project_tasks: brain/TASKS.md
   project_registry: brain/registry/
+  project_ideas: brain/registry/ideas.md  # systématique (anti-perte)
   project_references: brain/references/
   project_brain_readme: brain/README.md
   # Exemple pratique / dogfooding : le brain/ de ce dépôt Second Brain.
@@ -39,5 +46,7 @@ registry_format:
   container: markdown
   entry_serialization: jsonl_one_object_per_physical_line
   decision: DEC-009
+  list_field: LIST.* keys only
+  relations_include: depends_on
 secrets:
   store_in_git: false

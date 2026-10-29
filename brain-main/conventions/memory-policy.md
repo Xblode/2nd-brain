@@ -18,7 +18,7 @@ Une proposition indique : cible, opération (`append` | `patch` | `add_entry` | 
 - Conteneur : Markdown versionné en **collections** (plusieurs entrées par fichier).
 - Sérialisation d'une entrée : objet JSON strict sur **une ligne physique** dans un bloc `jsonl` (DEC-009). Pas de prose dupliquant l'entrée sous la ligne.
 - Contrats : `taxonomy.yaml`, `registry-schema.json`.
-- Foyers : décisions/questions → `brain/DECISIONS.md` ; tâches → `brain/TASKS.md` ; autres kinds → `brain/registry/{kind}s.md` au premier besoin (ex. `ideas.md`).
+- Foyers : décisions/questions → `brain/DECISIONS.md` ; tâches → `brain/TASKS.md` ; idées → `brain/registry/ideas.md` (**systématique**, exception anti-perte du Skill `/note` et du template) ; autres kinds → `brain/registry/{kind}s.md` au premier besoin (`facts.md`, `hypotheses.md`, `issues.md`, …).
 - Toute nouvelle entrée durable démarre en `proposed` (sauf capture Inbox, hors registre).
 - Seul un humain fait passer `proposed` → `accepted` | `rejected` | `deferred` (DEC-003).
 - Après acceptation : `decision` → `settled` ; `task`/`issue` → `active` puis `blocked`|`resolved` ; `question` → `active` jusqu'à `resolved` ; `fact`/`reference` restent `accepted` (ou `superseded`) ; `idea`/`hypothesis` : `accepted` = on garde ; promotion = nouvelles entrées liées (`derived_from`), pas de changement de kind in-place.

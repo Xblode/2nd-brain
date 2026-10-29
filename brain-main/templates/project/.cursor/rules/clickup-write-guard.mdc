@@ -5,7 +5,7 @@ alwaysApply: true
 
 # ClickUp Write Guard
 
-- Convention : `brain-main/skills/clickup/modules/convention.md` et `sync.md` (DEC-007).
+- Convention : résoudre `brain_main_path` dans `.second-brain.yaml`, puis lire `{brain_main_path}/skills/clickup/modules/convention.md` et `sync.md` (DEC-007). Si le chemin est absent ou inaccessible, le signaler.
 - Commande : `/clickup`. Prévisualisation ≠ exécution.
 - Aucune écriture ClickUp sans approbation du lot exact. Pas d'Inbox.
 - Listes via `LIST.*` dans `.clickup/mapping.yaml`. Local (`brain/TASKS.md`) = SoT.

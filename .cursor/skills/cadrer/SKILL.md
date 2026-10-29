@@ -9,5 +9,6 @@ disable-model-invocation: true
 
 Procédure canonique : `brain-main/skills/cadrer/SKILL.md`. La lire et la suivre.
 
-Mémoire : `brain/` (`STATE`, `OVERVIEW`, `ARCHITECTURE`, `DECISIONS`, `TASKS`).  
+Mémoire : `brain/` (`STATE`, `OVERVIEW`, `ARCHITECTURE`, `DECISIONS`, `TASKS`, `registry/`).  
+Anti-perte : toute idée a une destination ; ops `append`|`patch`|`add_entry`|`supersede`.  
 Catalogue : `brain-main/skills/COMMANDS.md`.

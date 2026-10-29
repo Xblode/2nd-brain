@@ -87,6 +87,7 @@
               "implements",
               "related_to",
               "blocks",
+              "depends_on",
               "duplicate_of"
             ]
           },
@@ -127,7 +128,8 @@
     },
     "list": {
       "type": "string",
-      "description": "Clé logique LIST.* (ex. LIST.TASKS, LIST.BUGS, LIST.ROADMAP), résolue via .clickup/mapping.yaml."
+      "pattern": "^LIST\\.[A-Z][A-Z0-9_]*$",
+      "description": "Clé logique LIST.* (ex. LIST.TASKS, LIST.BUGS, LIST.ROADMAP), résolue via .clickup/mapping.yaml. Jamais le nom affiché de la liste ClickUp."
     },
     "milestone": {
       "type": "string",

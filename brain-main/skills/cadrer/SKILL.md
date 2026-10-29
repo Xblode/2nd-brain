@@ -65,13 +65,14 @@ Je n'ai pas tranché : [points flous]
 
 ## Après chaque message
 
-1. Classer faits, hypothèses, idées, inconnues — **rien de pertinent n’est omis** (idée → proposer `registry/ideas` ou note dans `STATE` / `DECISIONS`).
+1. Classer faits, hypothèses, idées, inconnues — **rien de pertinent n’est omis** (idée / hypothèse → `registry/ideas` ou `hypotheses` via `add_entry` ; ne pas enterrer dans `STATE` seul).
 2. Mettre à jour **`brain/STATE.md`** (court, `patch`) : phase, focus, next_action, open_questions (≤5).
 3. Proposer des patches **ciblés** seulement sur les fichiers `brain/` que le message remplit :
    - vision / périmètre → `OVERVIEW.md`
    - zones / relations → `ARCHITECTURE.md`
    - décision ou question → `DECISIONS.md` (`add_entry` ; appliquer après oui)
    - lot vérifiable → `TASKS.md`
+   - idée / hypothèse → `registry/` (`add_entry`)
 4. Opérations : `append` / `patch` / `add_entry` / `supersede` — pas de remplacement silencieux de fichier entier.
 5. Ne pas créer une usine `docs/` web ni de second fichier d’état.
 6. Profil stack web : seulement si l’utilisateur vise un produit web ; rester `À VALIDER` jusqu’à `/build`.

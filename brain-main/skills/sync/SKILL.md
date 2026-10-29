@@ -26,7 +26,7 @@ Pack `web-starter` / `docs/…` : comparer **seulement** si `STATE` indique que 
 1. Lire **`brain/STATE.md`**, puis lister les fichiers `brain/` présents.
 2. Pour chaque doc attendu de la structure mémoire : présent / incomplet / absent. Pas de doublon sous un autre nom.
 3. En dogfooding : signaler aussi les écarts évidents entre ce que `brain/` décide et ce qui manque encore sous `brain-main/` (rapport, sans tout réécrire).
-4. Montrer le lot (créations / patches). `replace` seulement si la page entière est dans le lot.
+4. Montrer le lot : créations (fichier absent) / `append` | `patch` | `add_entry` | `supersede`. Pas de remplacement silencieux de fichier entier — contenu total uniquement avec accord explicite sur tout le lot.
 5. Attendre un oui. Cet oui **ne** couvre **pas** les tâches ClickUp (`/clickup`).
 6. Après écriture : mettre à jour `brain/STATE.md` si l’état change. Relire et rapporter.
 7. Sans outil distant : rester en Markdown local.

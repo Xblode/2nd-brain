@@ -4,21 +4,23 @@
 
 **Usagers :** humains et agents IA (Cursor, etc.) qui partagent les mêmes contrats.
 
-**Périmètre actuel :** squelette documentaire + skills textuels ; dogfooding sur `brain/` pour valider l’architecture avant le runtime.
+**Périmètre actuel :** squelette documentaire + skills textuels ; dogfooding sur `brain/` ; jalon 1 **clos** avec écart ClickUp push documenté.
 
 **Principes non négociables :** fichiers canoniques = source de vérité ; écriture durable = proposition puis approbation humaine ; Inbox manuelle ; mise à jour sans suppression silencieuse ; aucun secret dans Git ; SQLite dérivé seulement.
 
-**Hors périmètre actuel (post-jalon 1) :** moteur exécutable (parser, index, MCP, CLI), sync automatique, pack web comme cœur du produit.
+**Hors périmètre actuel :** moteur exécutable (parser, index, MCP SB, CLI), sync automatique, pack web comme cœur du produit.
 
-## Roadmap — Jalon 1 (en cours)
+## Roadmap — Jalon 1 (clos — 2026-10-29)
 
-**Objectif :** pouvoir communiquer et conventionner le flux **Chatbot → infos en local (`brain/`) → mise à jour ClickUp**.
+**Objectif :** communiquer et conventionner le flux **Chatbot → infos en local (`brain/`) → ClickUp**.
 
-**Réussi quand :**
+| Critère | Statut |
+| --- | --- |
+| 1. Architecture `brain/` validée / testée (modèle) | Fait |
+| 2. Skills classent / rangent / patchent sans effacer | Fait |
+| 3. Pas de perte d’idée entre chat et local | Fait (preuve `/note`) |
+| 4. `/clickup` projette le lot approuvé | **Partiel** — preview MCP réelle OK ; **push reporté** |
 
-1. L’architecture de dossiers projet (`brain/` de ce dépôt) est **validée et testée** comme modèle.
-2. Les skills **comprennent** un message, le **classent**, le **rangent** au bon endroit, **mettent à jour** les docs sans effacer l’existant.
-3. On **ne perd plus** d’information ni d’idée entre le chat et le local (toute idée a une destination proposée).
-4. Après le local, `/clickup` peut **projeter** le lot approuvé vers ClickUp (sans prendre ClickUp comme SoT).
+**Écart ClickUp (accepté à la clôture M1) :** pas de `.clickup/mapping.yaml` projet, liste `LIST.TASKS` absente sous Projets/2nd Brain, `status_map` vide. Push = travail reporté (voir TASK-012).
 
-**Pas dans le jalon 1 :** automatisation runtime complète, Notion comme SoT, multi-agents complexes, pack web obligatoire.
+**Pas dans le jalon 1 :** automatisation runtime, Notion comme SoT, multi-agents complexes, pack web obligatoire.

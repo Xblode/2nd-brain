@@ -6,17 +6,22 @@ Ce fichier décrit l'état réel, pas une cible.
 ```yaml
 updated: "2026-10-29"
 project: Second Brain
-phase: milestone_1
+phase: m1_done
 runtime_status: not_implemented
 milestone: M1
-current_focus: "Jalon 1 — Chat → brain/ → ClickUp ; valider archi ; skills anti-perte"
-next_action: "Tester le flux M1 : message → /note → maj brain/ → /clickup (prévisualisation)."
+milestone_status: closed
+current_focus: "M1 clos — écart ClickUp push documenté ; suite = TASK-012 ou jalon 2"
+next_action: "Quand prêt : créer LIST.TASKS + .clickup/mapping.yaml puis /clickup (TASK-012) ; sinon cadrer jalon 2."
 active_tasks:
+  - TASK-012
+resolved_m1:
   - TASK-007
   - TASK-008
   - TASK-009
   - TASK-010
 blockers: []
+known_gaps:
+  - "ClickUp push : mapping projet + LIST.TASKS + status_map (TASK-012)"
 open_questions: []
 decisions:
   adopted:
@@ -30,6 +35,9 @@ decisions:
     - DEC-008
     - DEC-009
     - DEC-010
+  proposed:
+    - DEC-011
+    - DEC-012
   framing_closed:
     - OPEN-001
     - OPEN-002
@@ -51,16 +59,16 @@ canonical_sources:
 
 ## Distinctions
 
-| Existe réellement | Seulement prévu / pas encore prouvé |
+| Existe réellement | Seulement prévu / reporté |
 | --- | --- |
-| Docs, conventions, skills textuels, DEC-001–010 | Runtime `core/`, parser, SQLite, MCP, CLI |
-| Mémoire `brain/` (STATE, OVERVIEW, ARCHITECTURE, DECISIONS, TASKS, inbox, registry/ideas, references, runtime) | Test manuel bout-en-bout M1 (preuve) |
-| Skills `/` ancrés sur `brain/` + anti-perte (`/note`, memory-policy) | Sync ClickUp automatisée |
-| Template `templates/project/brain/` aligné sur l’exemple | `/build` 100 % automatisé |
-| Contrats ClickUp + skill `/clickup` (prévisualisation) | Lot ClickUp réellement poussé et vérifié |
-| Pack `web-starter` (optionnel, hors M1) | Application web |
+| Docs, conventions, skills, DEC-001–010 | Runtime `core/`, parser, SQLite, MCP SB, CLI |
+| Mémoire `brain/` + template structurel aligné | — |
+| Preuve Chat → local (`/note`) | — |
+| Preview `/clickup` MCP (lot documenté) | **Push** ClickUp (TASK-012) |
+| Pack `web-starter` (optionnel) | Application web |
 
-## Jalon 1 — rappel
+## Clôture M1
 
-**Flux :** comprendre → ranger en local (`brain/`) → accord → projeter ClickUp.  
-**Détail / critères :** `OVERVIEW.md`. **Décision :** DEC-010. **Tâches :** TASK-007 … TASK-010.
+- Preuves : TASK-007…010 resolved ; détail dans `OVERVIEW.md`.
+- Écart accepté : push ClickUp plus tard → **TASK-012**.
+- Pas de jalon 2 ouvert automatiquement.

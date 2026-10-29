@@ -6,7 +6,7 @@
 
 **Périmètre actuel :** à cadrer.
 
-**Principes non négociables :** fichiers canoniques = source de vérité ; écriture durable = proposition puis approbation humaine ; Inbox manuelle ; mise à jour sans suppression silencieuse ; aucun secret dans Git.
+**Principes non négociables :** fichiers canoniques = source de vérité ; écriture durable = proposition puis approbation humaine ; Inbox manuelle ; mise à jour sans suppression silencieuse ; aucun secret dans Git ; SQLite dérivé seulement.
 
 **Hors périmètre actuel :** à cadrer.
 

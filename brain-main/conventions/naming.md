@@ -2,8 +2,18 @@
 
 - Noms de fichiers stables, en anglais. Le contenu peut être en français.
 - Pas de variantes numérotées (`ROADMAP-final-v2.md`), sauf le parcours `docs/00` à `docs/05`.
-- Documents requis d'un projet : `brain/README.md`, `brain/STATE.md`.
-- Documents à créer seulement si le besoin est réel : `OVERVIEW`, `ARCHITECTURE`, `DECISIONS`, `TASKS`, `CHANGELOG`, `GLOSSARY`, `ROADMAP`.
+
+## Documents projet
+
+Deux niveaux (ne pas les confondre) :
+
+| Niveau | Fichiers | Quand |
+| --- | --- | --- |
+| **Socle minimal** | `brain/README.md`, `brain/STATE.md` | Toujours |
+| **Profil Second Brain complet** | + `OVERVIEW`, `ARCHITECTURE`, `DECISIONS`, `TASKS`, + `brain/registry/ideas.md` | Template `project` et commandes `/cadrer`, `/note`, `/audit`, `/sync` |
+
+Le manifeste `templates/project/template-manifest.yaml` installe le **profil complet** par défaut.  
+Documents encore au premier besoin : `CHANGELOG`, `GLOSSARY`, `ROADMAP`, et les autres collections registry (`facts.md`, `hypotheses.md`, `issues.md`, …).
 
 ## Identifiants de registre (DEC-006)
 

@@ -3,19 +3,24 @@
 Catalogue des commandes `/` exposées via `.cursor/skills/`.  
 Canon : dossiers sous `brain-main/skills/<commande>/SKILL.md`.
 
-## Mémoire projet (obligatoire)
+## Mémoire projet
 
 Toutes les commandes s’ancrent dans **`brain/`** — exemple pratique : le `brain/` de ce dépôt.
 
+**Socle minimal** : `README.md` + `STATE.md`.  
+**Profil complet** (template `project` + ces commandes) : + `OVERVIEW`, `ARCHITECTURE`, `DECISIONS`, `TASKS`, + `registry/ideas.md`. Voir `conventions/naming.md`.
+
 | Chemin | Rôle |
 | --- | --- |
-| `brain/STATE.md` | **État maître** (jamais un second état concurrent) |
-| `brain/OVERVIEW.md` | Vision / brief |
-| `brain/ARCHITECTURE.md` | Zones et responsabilités |
-| `brain/DECISIONS.md` | Décisions & questions (JSONL) |
-| `brain/TASKS.md` | Tâches (JSONL) |
+| `brain/STATE.md` | **État maître** (jamais un second état concurrent) — socle |
+| `brain/README.md` | Orientation mémoire — socle |
+| `brain/OVERVIEW.md` | Vision / brief — profil complet |
+| `brain/ARCHITECTURE.md` | Zones et responsabilités — profil complet |
+| `brain/DECISIONS.md` | Décisions & questions (JSONL) — profil complet |
+| `brain/TASKS.md` | Tâches (JSONL) — profil complet |
+| `brain/registry/ideas.md` | Idées (JSONL) — systématique (anti-perte) |
 | `brain/inbox/` | Capture manuelle uniquement |
-| `brain/registry/`, `references/`, `runtime/` | Au besoin |
+| `brain/registry/` (autres), `references/`, `runtime/` | Au premier besoin |
 
 Dogfooding : on fait évoluer **`brain-main/`** en s’appuyant sur cette mémoire.  
 Pack `web-starter` / `docs/…` : **optionnel**, seulement si un profil web a été décidé via `/build`.
@@ -37,7 +42,7 @@ Anti-perte : `memory-policy.md` + `/note` — aucune idée jetée en silence.
 | `/build` | `build` | Lot de construction : template, dogfood `brain-main`, ou pack web optionnel |
 | `/go` | `go` | Contexte `brain/` + une seule prochaine commande |
 | `/statut` | `statut` | État, blocages, priorités (lecture seule) |
-| `/note` | `note` | Un élément structuré dans `brain/` après prévisualisation |
+| `/note` | `note` | Classer → 1+ destinations dans `brain/` (anti-perte) après prévisualisation |
 | `/sync` | `sync` | Écarts vs structure `brain/` attendue → lot à approuver |
 | `/clickup` | `clickup` | Projection local → ClickUp (prévisualisation, convention 2nd-brain) |
 | `/spec` | `spec` | Spec testable ancrée dans `TASKS` / registry |
