@@ -1,0 +1,16 @@
+﻿# Catalogue de documents â€” crÃ©er uniquement lorsque le besoin est rÃ©el.
+canonical_documents:
+  - STATE.md
+  - README.md
+  - OVERVIEW.md
+  - ARCHITECTURE.md
+  - SPECIFICATION.md
+  - DECISIONS.md
+  - ROADMAP.md
+  - TASKS.md
+  - CHANGELOG.md
+  - GLOSSARY.md
+  - RESEARCH.md
+  - RISKS.md
+  - OPERATIONS.md
+creation_policy: on_demand

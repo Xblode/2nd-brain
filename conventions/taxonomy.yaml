@@ -1,0 +1,35 @@
+﻿# Taxonomie proposÃ©e â€” Ã  valider et faire Ã©voluer avec parcimonie.
+kinds:
+  - IDEA
+  - HYPOTHESIS
+  - DECISION
+  - REQUIREMENT
+  - FACT
+  - QUESTION
+  - PLAN
+  - TASK
+  - REFERENCE
+  - INSIGHT
+  - ISSUE
+  - NOTE
+statuses:
+  - PROPOSED
+  - OPEN
+  - ACCEPTED
+  - REJECTED
+  - SUPERSEDED
+  - RESOLVED
+scopes:
+  - GLOBAL
+  - SYSTEM
+  - PROJECT
+  - COMPONENT
+  - WORKSTREAM
+relations:
+  - SUPPORTS
+  - CONTRADICTS
+  - SUPERSEDES
+  - DERIVED_FROM
+  - IMPLEMENTS
+  - RELATED_TO
+  - DUPLICATE_OF
