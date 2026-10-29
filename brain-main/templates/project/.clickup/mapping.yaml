@@ -1,17 +1,26 @@
 version: 1
 provider: clickup
 enabled: false
-purpose: Correspondance entre les tâches locales et ClickUp. Pas une connexion.
+purpose: >-
+  Mapping local (SoT, DEC-007) → projection ClickUp. Pas une connexion.
+  Le skill lit brain/TASKS.md et pousse vers ces listes après approbation.
 resources:
   workspace_id: null
   space_id: null
   list_ids: []
+  # Exemple de clés logiques → IDs ClickUp (à renseigner par projet) :
+  # lists:
+  #   Tasks: null
+  #   Issues: null
+  #   Roadmap: null
 sync:
   mode: propose_only
-  source_of_truth: undecided
+  source_of_truth: local
+  direction: local_to_clickup
   create_enabled: false
   update_enabled: false
   delete_enabled: false
   require_explicit_approval: true
 conflicts:
   policy: manual_review
+  # En cas de drift ClickUp : proposer patch local ou re-push ; jamais écraser le local en silence.

@@ -2,10 +2,21 @@
 
 L'agent qui traite ClickUp est `brain-main/skills/clickup/SKILL.md`. Le charger avant une lecture ou une action. Il ne remplace pas ce contrat et ne crée pas la connexion.
 
-ClickUp peut porter le suivi opérationnel. `brain/TASKS.md` reste le document local tant qu'une décision n'a pas désigné une autre source.
+## Rôle (DEC-007)
 
-Le dossier `.clickup/` d'un projet décrit la correspondance : espaces, listes, champs, création, mise à jour, suppression, conflits. ClickUp ne lit pas ce dossier. La connexion se fait dans le client MCP, sans secret dans Git.
+- **Local** (`brain/TASKS.md` et registre) : source de vérité de toutes les informations, y compris tâches — format optimisé pour l'IA.
+- **ClickUp** : vue opérationnelle pour l'humain. Le skill lit le local et propose les mises à jour ClickUp.
+- Direction : **local → ClickUp**. Pas de sync silencieuse. Pas de ClickUp comme SoT d'un champ.
 
-Démarrer en lecture ou en proposition. Ne pas créer, modifier, assigner ou supprimer une tâche sans approbation explicite. Ne pas effacer une tâche parce qu'une recherche locale est incomplète.
+`brain/TASKS.md` reste le document canonique des tâches. ClickUp n'y substitue pas.
 
-La façon de proposer, valider et réconcilier un changement venu de ClickUp n'est pas encore décidée.
+Espaces du workspace (observés) :
+
+- **Mon organisation** : vrac, vie perso, notes générales.
+- **Projets** : un dossier par projet, plus le dossier **Template** (base) et la liste **Process**.
+
+La topologie détaillée est dans `brain-main/skills/clickup/modules/convention.md`. La sync conception : `modules/sync.md`.
+
+Le dossier `.clickup/` décrit la correspondance : espaces, listes, mapping d'IDs, mode `propose_only`. ClickUp ne lit pas ce dossier. Connexion = client MCP, sans secret dans Git.
+
+Démarrer en lecture ou en proposition. Ne pas créer, modifier, assigner ou supprimer une tâche ClickUp sans approbation explicite, et sans entrée locale quand l'IA initie le travail. Ne pas effacer une tâche parce qu'une recherche locale ou distante est incomplète.

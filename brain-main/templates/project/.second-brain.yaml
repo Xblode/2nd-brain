@@ -1,0 +1,9 @@
+# Copié une fois (DEC-008). Adapter brain_main_path à l'installation réelle.
+# Exemples : ../2nd-brain/brain-main | submodule path | chemin absolu documenté
+version: 1
+template_id: project
+template_version: 1
+brain_main_path: null
+notes: >-
+  Sans brain_main_path résolu, les agents se limitent aux fichiers locaux du projet
+  et signalent l'absence du système commun (skills, conventions, integrations).

@@ -1,0 +1,42 @@
+# DEC-008 — Manifeste du template projet
+# Politiques : copy_once | sync_shared | link_only (link_only = jamais dans le projet)
+version: 1
+decision: DEC-008
+template_id: project
+
+# Fichiers installés dans le dépôt cible
+paths:
+  AGENTS.md: sync_shared
+  CLAUDE.md: sync_shared
+  .second-brain.yaml: copy_once
+  brain/README.md: sync_shared
+  brain/STATE.md: copy_once
+  brain/inbox/README.md: sync_shared
+  .clickup/README.md: sync_shared
+  .clickup/mapping.yaml: copy_once
+  .notion/README.md: sync_shared
+  .notion/mapping.yaml: copy_once
+  .github/copilot-instructions.md: sync_shared
+  .github/PULL_REQUEST_TEMPLATE.md: sync_shared
+  .github/ISSUE_TEMPLATE/bug_report.md: sync_shared
+  .github/ISSUE_TEMPLATE/feature_request.md: sync_shared
+  .cursor/rules/second-brain.mdc: sync_shared
+
+# Jamais copiés — lus via brain_main_path (.second-brain.yaml)
+link_only_prefixes:
+  - skills/
+  - conventions/
+  - integrations/
+  - docs/
+  - core/
+  - mcp-server/
+  - cli/
+  - scripts/
+  - adapters/
+  - templates/
+
+update:
+  mode: propose_only
+  never_overwrite_policies:
+    - copy_once
+  on_diverged_sync_shared: report_only

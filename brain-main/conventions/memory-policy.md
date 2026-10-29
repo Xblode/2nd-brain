@@ -20,3 +20,9 @@ Une proposition indique : cible, opération, raison, contenu ou diff, sources, e
 - Après acceptation : `decision` → `settled` ; `task`/`issue` → `active` puis `blocked`|`resolved` ; `question` → `active` jusqu'à `resolved` ; `fact`/`reference` restent `accepted` (ou `superseded`) ; `idea`/`hypothesis` : `accepted` = on garde ; promotion = nouvelles entrées liées (`derived_from`), pas de changement de kind in-place.
 - Contradiction : lier `contradicts`, ne pas écraser.
 - Remplacement : nouvelle entrée + `supersedes` ; l'ancienne passe `superseded`.
+
+## Intégrations (DEC-007)
+
+- Le local porte tous les champs (y compris tâches) ; format `entry` optimisé pour l'IA.
+- ClickUp = projection humaine ; le skill lit `brain/TASKS.md` et pousse après approbation.
+- Ne pas écraser le local pour coller à ClickUp/Notion sans proposition approuvée.

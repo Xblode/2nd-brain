@@ -1,13 +1,14 @@
 version: 1
 provider: notion
 enabled: false
-purpose: Correspondance entre les documents locaux et Notion. Pas une connexion.
+purpose: Miroir / publication depuis le local (DEC-007). Pas une connexion. Notion ne possède aucun champ du registre.
 resources:
   pages: []
   databases: []
 sync:
   mode: propose_only
-  source_of_truth: undecided
+  source_of_truth: local
+  direction: local_to_notion
   create_enabled: false
   update_enabled: false
   delete_enabled: false

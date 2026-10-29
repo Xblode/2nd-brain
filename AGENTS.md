@@ -28,12 +28,11 @@ Second Brain est actuellement traité comme un squelette documentaire et archite
 
 Le format du registre, les identifiants, les relations et le cycle de vie sont tranchés (DEC-006) : voir `brain/DECISIONS.md`, `brain-main/conventions/taxonomy.yaml` et `registry-schema.json`. Ne pas inventer un autre schéma.
 
-Ne pas trancher silencieusement les sujets encore ouverts dans `brain/STATE.md` ou `brain/DECISIONS.md`, notamment :
+La propriété des champs et la sync sont tranchées (DEC-007) : le local est la source de vérité de tous les champs (y compris tâches) ; ClickUp est une projection humaine ; le skill ClickUp lit `brain/TASKS.md` / le registre pour proposer les mises à jour ClickUp. Ne pas réintroduire ClickUp ou Notion comme SoT d'un champ.
 
-- la réconciliation et la synchronisation entre le stockage local, ClickUp et Notion, et la propriété des champs (OPEN-002) ;
-- la façon de déployer et mettre à jour les templates sans écraser les personnalisations (OPEN-003).
+Le déploiement du template est tranché (DEC-008) : `copy_once` / `sync_shared` / `link_only` via `template-manifest.yaml` ; `brain-main` lié par `.second-brain.yaml` (`brain_main_path`) ; mises à jour en propose-only sans écraser le project-owned. Ne pas vendor tout `brain-main/` dans un projet client.
 
-Quand une décision est nécessaire, présenter les options, compromis, risques et recommandation. Enregistrer une décision uniquement lorsqu'elle est confirmée par un humain.
+Quand une nouvelle décision est nécessaire, présenter les options, compromis, risques et recommandation. Enregistrer une décision uniquement lorsqu'elle est confirmée par un humain.
 
 ## 4. Mode de travail : réflexion d'abord, exécution ensuite
 

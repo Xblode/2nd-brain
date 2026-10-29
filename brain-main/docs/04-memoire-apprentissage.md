@@ -18,6 +18,7 @@ Création en `proposed` → validation humaine (`accepted` / `rejected` / `defer
 
 Foyers d'écriture : `brain/DECISIONS.md` (décisions, questions), `brain/TASKS.md` (tâches), `brain/registry/` (autres kinds, au besoin). Pas un fichier par idée.
 
-## Encore ouvert
+## Intégrations et template
 
-Réconciliation local / ClickUp / Notion et propriété des champs (OPEN-002). Déploiement du template (OPEN-003).
+- DEC-007 : local SoT ; ClickUp projection.
+- DEC-008 : déploiement template (`copy_once` / `sync_shared` / `link_only`) ; voir `templates/README.md`.

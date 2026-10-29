@@ -1,49 +1,92 @@
 ---
 name: clickup
 description: >-
-  Spécialiste ClickUp du Second Brain. À charger dès qu'une demande parle de
-  ClickUp, d'une tâche, liste, statut, assignation, commentaire ou échéance
-  ClickUp, ou de la correspondance .clickup/. Ne pas l'utiliser pour Notion ni
-  pour le registre canonique.
+  Applique la convention ClickUp du Second Brain, lit les tâches locales
+  (brain/TASKS.md, registre DEC-006/007) et prépare les écritures ClickUp en
+  projection. À utiliser dès qu'une demande parle de ClickUp, tâche, liste,
+  statut, assignation, commentaire, échéance, jalon, .clickup/, mapping ou
+  duplication de template. Pas pour Notion ni pour trancher le registre.
 ---
 
-# Spécialiste ClickUp
+# ClickUp — Second Brain
 
-Agent d'instructions pour ClickUp. Il ne connecte rien par lui-même. Le contrat commun est `brain-main/integrations/clickup.md`. Les identifiants d'un projet sont dans son `.clickup/mapping.yaml`. Les secrets restent dans le client MCP.
+Spécialiste ClickUp. Ne remplace ni l'orchestrateur ni les agents de code.
 
-## Quand l'utiliser
+**DEC-007 :** le local est la source de tout (y compris tâches). ClickUp est la vue humaine. Ce skill lit le local et aligne ClickUp — il ne prend pas ClickUp comme vérité des champs.
 
-Dès que la demande concerne ClickUp : lire, chercher, créer, modifier, assigner, commenter, fermer ou supprimer une tâche, ou rapprocher ClickUp de `brain/TASKS.md`.
+## Avant de travailler
 
-Ne pas l'utiliser pour trancher qui est la source de vérité. Cette question est ouverte (O-002 dans `brain/DECISIONS.md`). Tant qu'elle n'est pas décidée, `brain/TASKS.md` reste le document local.
+1. `AGENTS.md`
+2. `brain/STATE.md`
+3. `brain-main/integrations/clickup.md`
+4. **`brain/TASKS.md`** (et entrées `task` / `issue` liées) — source des payloads
+5. `.clickup/README.md` et `.clickup/mapping.yaml` s'ils existent
+6. Outils ClickUp réellement disponibles — sinon le dire, ne pas simuler
+7. Espace : **Mon organisation** (vrac / perso) ou **Projets** (un dossier = un projet). Détail : `modules/convention.md`
 
-## Avant toute action
+Ne pas traiter une fonctionnalité documentée comme implémentée. Vérifier.
 
-1. Lire `brain/STATE.md`, puis `brain-main/integrations/clickup.md`.
-2. Lire `.clickup/README.md` et `.clickup/mapping.yaml` s'ils existent. S'ils manquent, le dire et ne pas inventer d'identifiants d'espace ou de liste.
-3. Vérifier qu'un outil ClickUp est réellement disponible dans le client. S'il ne l'est pas, le dire et continuer avec les fichiers locaux. Ne pas simuler un appel.
-4. Ne jamais lire ni écrire de jeton, de clé ou de mot de passe.
+Charger un seul module selon le besoin : `modules/convention.md`, `modules/sync.md`, `modules/templates.md`.
 
-## Ce qu'il peut faire sans nouvel accord
+## Sources
 
-- Chercher et lire des tâches, listes et statuts.
-- Citer les identifiants et les liens réellement retournés.
-- Comparer ce qui est lu avec `brain/TASKS.md` et signaler les écarts, sans les fusionner.
+| Source | Rôle |
+| --- | --- |
+| Fichiers locaux (`brain/TASKS.md`, registre) | **Source de vérité** de tous les champs |
+| ClickUp | Projection humaine ; drift à signaler, pas à imposer au local |
+| GitHub | Code et historique |
+| Conversation | Cadrage seulement |
+| SQLite | Index dérivé, jamais seule copie |
 
-## Ce qui exige un accord explicite
+## Convention listes (proposition)
 
-Créer, modifier, commenter, assigner, changer une date, fermer ou supprimer. Décrire d'abord l'opération, la cible exacte et l'effet. Attendre l'approbation de cette opération. Un accord général du type « occupe-toi de ClickUp » ne suffit pas.
+- **Inbox** — capture manuelle. L'IA n'y écrit pas.
+- **Roadmap** — jalons + critères. Pas de copie des tâches.
+- **Tasks** — actions uniques. Préférer un champ `Phase` à une liste par phase.
+- **Decisions** — miroir éventuel ; le canon reste `brain/DECISIONS.md`.
+- **Issues** — problèmes / risques / blocages (canon local `ISSUE-`).
 
-Ne pas supprimer une tâche parce qu'elle est absente des fichiers locaux ou parce qu'une recherche est incomplète.
+Noms : un seul mot, pas de préfixe numérique.
 
-## Ce qu'il ne fait pas
+## Qualité d'une tâche (local d'abord)
 
-- Écrire dans `brain/inbox/`.
-- Présenter une tâche ClickUp comme une décision canonique.
-- Modifier `brain/TASKS.md` sans proposition approuvée.
-- Choisir à la place de l'humain le propriétaire d'un champ entre le local et ClickUp.
-- Prétendre que `.clickup/` a authentifié le service.
+Une tâche destinée à ClickUp doit exister en local en bloc `entry` avec au minimum : `id`, `kind`, `status`, `title`, `created`, `updated`, `sources`, `relations`, plus selon besoin `assignees`, `due`, `priority`, `list`, `milestone`, `acceptance`, `clickup`.
 
-## Compte-rendu
+Le skill **mappe** ces champs vers ClickUp ; il ne complète pas un vide local en inventant depuis ClickUp sans proposition de patch local.
 
-Dire ce qui a été lu ou exécuté, les identifiants retournés, les erreurs, et ce qui n'a pas été fait parce que l'outil ou l'accord manquait.
+## Workflow
+
+1. Lire le local (`TASKS.md` / registre) et le mapping
+2. Lire ClickUp seulement pour comparer / vérifier
+3. Qualifier l'écart (créer / mettre à jour / drift)
+4. Prévisualiser le diff ClickUp dérivé du local
+5. Faire approuver — préparer ≠ autoriser
+6. Exécuter via outils disponibles
+7. Vérifier et reporter
+8. Mettre à jour `clickup.task_id` / `last_pushed` si succès
+
+## Sync et templates
+
+Conception : `modules/sync.md` (DEC-007). Pas d'implémentation runtime automatique.
+
+Duplication de template : `modules/templates.md`.
+
+## Règles dures
+
+- Ne pas prendre une tâche ClickUp comme canon sans entrée locale.
+- Ne pas écraser le local pour coller à ClickUp sans proposition approuvée.
+- Ne pas écrire dans une Inbox.
+- Ne pas inventer d'ID, de résultat d'API, ni d'outil disponible.
+- Ne pas changer la convention listes en passant : proposer, attendre.
+
+## Réponse
+
+1. **État local vérifié** (entrées lues)
+2. **Écart ClickUp** (si inspecté)
+3. **Proposition** (local et/ou ClickUp) — non appliquée
+4. **Risques / drift**
+5. **Approbation demandée**
+
+## Succès
+
+Sans l'historique : savoir quelles `TASK-` / `ISSUE-` locales existent, lesquelles sont mappées, ce qui doit être poussé, et ce qui a divergé sur ClickUp.

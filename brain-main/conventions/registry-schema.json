@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.invalid/second-brain/registry-entry.schema.json",
   "title": "Entrée de registre Second Brain",
-  "description": "Schéma d'une entrée atomique du registre (DEC-006). Source de vérité : Markdown collection avec bloc YAML fenced `entry`. SQLite reste un index dérivé.",
+  "description": "Schéma d'une entrée atomique (DEC-006). Champs opérationnels et mapping ClickUp (DEC-007) : le local est SoT ; ClickUp est une projection. SQLite reste un index dérivé.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -18,12 +18,11 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "Identifiant stable, jamais réutilisé. Préfixe selon kind (FACT-, HYP-, IDEA-, OPEN-, DEC-, TASK-, ISSUE-, REF-) + numéro monotone.",
+      "description": "Identifiant stable, jamais réutilisé.",
       "pattern": "^(FACT|HYP|IDEA|OPEN|DEC|TASK|ISSUE|REF)-[0-9]{3,}$"
     },
     "kind": {
       "type": "string",
-      "description": "Type d'entrée (taxonomie adoptée).",
       "enum": [
         "fact",
         "hypothesis",
@@ -37,7 +36,6 @@
     },
     "status": {
       "type": "string",
-      "description": "Statut dans le cycle de vie. Les combinaisons kind/status invalides sont rejetées par convention.",
       "enum": [
         "proposed",
         "accepted",
@@ -52,26 +50,21 @@
     },
     "title": {
       "type": "string",
-      "description": "Titre sur une ligne.",
       "minLength": 1
     },
     "summary": {
-      "type": "string",
-      "description": "Résumé court. Optionnel si le corps prose de la section Markdown suffit."
+      "type": "string"
     },
     "created": {
       "type": "string",
-      "format": "date",
-      "description": "Date de création ISO (YYYY-MM-DD)."
+      "format": "date"
     },
     "updated": {
       "type": "string",
-      "format": "date",
-      "description": "Date de dernière mise à jour ISO (YYYY-MM-DD)."
+      "format": "date"
     },
     "sources": {
       "type": "array",
-      "description": "Liens fichiers, URLs, ou mention « conversation » avec date éventuelle.",
       "items": {
         "type": "string",
         "minLength": 1
@@ -79,7 +72,6 @@
     },
     "relations": {
       "type": "array",
-      "description": "Liens vers d'autres entrées.",
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -115,8 +107,48 @@
     },
     "superseded_by": {
       "type": "string",
-      "description": "ID de l'entrée qui remplace celle-ci.",
       "pattern": "^(FACT|HYP|IDEA|OPEN|DEC|TASK|ISSUE|REF)-[0-9]{3,}$"
+    },
+    "assignees": {
+      "type": "array",
+      "description": "Assignés canoniques (local). Projetés vers ClickUp.",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "due": {
+      "type": "string",
+      "description": "Échéance ISO date ou datetime (local SoT).",
+      "format": "date"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["urgent", "high", "normal", "low"]
+    },
+    "list": {
+      "type": "string",
+      "description": "Clé logique de liste ClickUp (ex. Tasks, Issues, Roadmap), résolue via .clickup/mapping.yaml."
+    },
+    "milestone": {
+      "type": "string",
+      "description": "Jalon / phase logique (local)."
+    },
+    "acceptance": {
+      "type": "array",
+      "description": "Critères d'acceptation, une ligne chacun — pour l'IA et la description ClickUp.",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "clickup": {
+      "type": "object",
+      "description": "Mapping projection ClickUp (DEC-007). Ne remplace pas les champs métier locaux.",
+      "additionalProperties": false,
+      "properties": {
+        "task_id": { "type": "string" },
+        "list_id": { "type": "string" },
+        "last_pushed": {
+          "type": "string",
+          "description": "Horodatage ou date du dernier push réussi local → ClickUp."
+        },
+        "url": { "type": "string" }
+      }
     }
   }
 }

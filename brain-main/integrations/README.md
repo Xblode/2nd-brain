@@ -6,4 +6,4 @@ Contrats communs. Les correspondances d'un projet (identifiants de listes, pages
 - `.clickup/` et `.notion/` : conventions Second Brain. Ils ne démarrent pas un MCP.
 - Secrets : client MCP ou gestionnaire de secrets, jamais Git.
 
-Sans outil connecté, le dire et continuer avec les fichiers locaux. Sans règle de conflit, pas de synchronisation bidirectionnelle.
+Sans outil connecté, le dire et continuer avec les fichiers locaux. DEC-007 : local = SoT ; ClickUp/Notion = projection / miroir ; pas de sync bidirectionnelle automatique.
