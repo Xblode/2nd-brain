@@ -6,7 +6,7 @@
 ├── brain-main/       système commun
 │   ├── docs/
 │   ├── conventions/
-│   ├── skills/
+│   ├── skills/         second-brain et clickup
 │   ├── core/         non implémenté
 │   ├── integrations/
 │   ├── adapters/

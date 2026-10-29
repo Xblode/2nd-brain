@@ -5,6 +5,7 @@ canonical_sources:
   system_docs: brain-main/docs/
   system_integrations: brain-main/integrations/
   skill: brain-main/skills/second-brain/SKILL.md
+  clickup_specialist: brain-main/skills/clickup/SKILL.md
   project_state: brain/STATE.md
   project_overview: brain/OVERVIEW.md
   project_decisions: brain/DECISIONS.md

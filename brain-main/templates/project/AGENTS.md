@@ -8,3 +8,4 @@
 6. Avant une action externe, expliquer l'action et obtenir une approbation.
 7. Ne jamais enregistrer de secret dans le dépôt.
 8. `.clickup/` et `.notion/` décrivent des correspondances. Ils ne connectent pas les services.
+9. Si `brain-main/` est présent, une demande ClickUp charge `brain-main/skills/clickup/SKILL.md`.

@@ -8,6 +8,7 @@ Rôles logiques, pas forcément des processus séparés.
 - **Réalisation** : code d'un lot déjà choisi.
 - **Revue** : écarts par rapport aux critères.
 - **Mémoire** : prépare une proposition, ne l'applique pas et ne l'approuve pas.
+- **ClickUp** : lit ou propose des actions ClickUp selon `brain-main/skills/clickup/SKILL.md`. Il ne décide pas de la source de vérité et n'écrit pas sans accord explicite.
 
 ## Délégation
 

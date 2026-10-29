@@ -7,6 +7,7 @@ Source commune du Second Brain. Les projets n'en reçoivent pas une copie intég
 - `docs/` : vision et fonctionnement.
 - `conventions/` : règles communes. Le format du registre n'est pas encore choisi.
 - `skills/second-brain/` : Skill et modules d'instructions.
+- `skills/clickup/` : spécialiste ClickUp. Instructions seulement, pas une connexion.
 - `core/` : emplacement de la logique métier. Pas encore de code.
 - `integrations/` : contrats communs GitHub, ClickUp, Notion et MCP.
 - `adapters/` : points d'entrée par assistant, sans recopier les règles.

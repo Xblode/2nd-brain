@@ -26,3 +26,5 @@ Maintenir la continuité, aider au cadrage, retrouver l'existant et préparer de
 ## Modules
 
 Charger un seul module selon le besoin : `modules/brainstorming.md`, `modules/search-reconcile.md`, `modules/registry-write.md`, `modules/work-batching.md`.
+
+Si la demande concerne ClickUp, charger `brain-main/skills/clickup/SKILL.md` plutôt que d'improviser ici.
