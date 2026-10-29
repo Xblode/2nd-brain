@@ -1,0 +1,14 @@
+# Index et runtime dérivés
+**/runtime/*.sqlite
+**/runtime/*.sqlite-shm
+**/runtime/*.sqlite-wal
+**/runtime/cache/
+**/runtime/tmp/
+
+# Secrets
+.env
+.env.*
+!.env.example
+.mcp.json
+**/*.local.secrets.yaml
+**/*.local.secrets.json

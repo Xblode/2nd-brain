@@ -1,0 +1,27 @@
+version: 1
+purpose: Carte des emplacements. Le registre n'a pas encore de format canonique.
+canonical_sources:
+  system_rules: brain-main/conventions/
+  system_docs: brain-main/docs/
+  system_integrations: brain-main/integrations/
+  skill: brain-main/skills/second-brain/SKILL.md
+  project_state: brain/STATE.md
+  project_overview: brain/OVERVIEW.md
+  project_decisions: brain/DECISIONS.md
+  project_tasks: brain/TASKS.md
+project_template: brain-main/templates/project/
+project_integrations:
+  github: .github/
+  clickup: .clickup/
+  notion: .notion/
+derived_sources:
+  sqlite_index: brain/runtime/index.sqlite
+manual_only:
+  inbox: brain/inbox/
+write_policy:
+  durable_writes: propose_then_human_approve
+  inbox_automated_writes: forbidden
+  external_side_effects: require_explicit_approval
+  sqlite_is_canonical: false
+secrets:
+  store_in_git: false

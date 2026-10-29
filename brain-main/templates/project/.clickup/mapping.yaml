@@ -1,0 +1,17 @@
+version: 1
+provider: clickup
+enabled: false
+purpose: Correspondance entre les tâches locales et ClickUp. Pas une connexion.
+resources:
+  workspace_id: null
+  space_id: null
+  list_ids: []
+sync:
+  mode: propose_only
+  source_of_truth: undecided
+  create_enabled: false
+  update_enabled: false
+  delete_enabled: false
+  require_explicit_approval: true
+conflicts:
+  policy: manual_review

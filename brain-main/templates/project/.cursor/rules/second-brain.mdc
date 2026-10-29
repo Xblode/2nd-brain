@@ -1,0 +1,5 @@
+---
+description: Mémoire et continuité du projet
+alwaysApply: true
+---
+Lire `AGENTS.md` et `brain/STATE.md` avant une tâche substantielle. En réflexion, cadrer plutôt que coder. Toute écriture durable est proposée puis approuvée par un humain. Ne jamais écrire dans `brain/inbox/`.

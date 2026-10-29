@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/second-brain/registry-entry.schema.json",
+  "title": "Entrée de registre — non adoptée",
+  "description": "Emplacement réservé. Le format canonique (Markdown, JSON ou autre), les identifiants, les relations et les métadonnées ne sont pas décidés. Ne pas implémenter de persistance à partir de ce fichier.",
+  "type": "object",
+  "additionalProperties": true
+}

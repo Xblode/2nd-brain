@@ -1,0 +1,38 @@
+# Taxonomie proposée, non adoptée.
+# Ne pas l'utiliser comme contrat d'implémentation tant que le modèle de données
+# n'est pas décidé dans brain/DECISIONS.md.
+status: proposed
+kinds:
+  - IDEA
+  - HYPOTHESIS
+  - DECISION
+  - REQUIREMENT
+  - FACT
+  - QUESTION
+  - PLAN
+  - TASK
+  - REFERENCE
+  - INSIGHT
+  - ISSUE
+  - NOTE
+statuses:
+  - PROPOSED
+  - OPEN
+  - ACCEPTED
+  - REJECTED
+  - SUPERSEDED
+  - RESOLVED
+scopes:
+  - GLOBAL
+  - SYSTEM
+  - PROJECT
+  - COMPONENT
+  - WORKSTREAM
+relations:
+  - SUPPORTS
+  - CONTRADICTS
+  - SUPERSEDES
+  - DERIVED_FROM
+  - IMPLEMENTS
+  - RELATED_TO
+  - DUPLICATE_OF

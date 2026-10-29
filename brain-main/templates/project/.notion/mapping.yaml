@@ -1,0 +1,16 @@
+version: 1
+provider: notion
+enabled: false
+purpose: Correspondance entre les documents locaux et Notion. Pas une connexion.
+resources:
+  pages: []
+  databases: []
+sync:
+  mode: propose_only
+  source_of_truth: undecided
+  create_enabled: false
+  update_enabled: false
+  delete_enabled: false
+  require_explicit_approval: true
+conflicts:
+  policy: manual_review

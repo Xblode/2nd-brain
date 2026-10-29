@@ -1,7 +1,0 @@
-﻿# Configuration locale du Second Brain â€” schÃ©ma Ã  dÃ©finir.
-project_id: TODO
-project_name: TODO
-schema_version: 0
-registry_format: undecided
-sqlite_index: brain/runtime/second-brain.sqlite
-inbox_ai_write_access: false
