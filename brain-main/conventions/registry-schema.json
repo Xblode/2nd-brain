@@ -125,7 +125,7 @@
     },
     "list": {
       "type": "string",
-      "description": "Clé logique de liste ClickUp (ex. Tasks, Issues, Roadmap), résolue via .clickup/mapping.yaml."
+      "description": "Clé logique LIST.* (ex. LIST.TASKS, LIST.BUGS, LIST.ROADMAP), résolue via .clickup/mapping.yaml."
     },
     "milestone": {
       "type": "string",
@@ -145,7 +145,11 @@
         "list_id": { "type": "string" },
         "last_pushed": {
           "type": "string",
-          "description": "Horodatage ou date du dernier push réussi local → ClickUp."
+          "description": "Horodatage ISO du dernier push réussi local → ClickUp. Sert avec l'état distant à détecter les modifications concurrentes (modules/sync.md)."
+        },
+        "last_pushed_hash": {
+          "type": "string",
+          "description": "Empreinte optionnelle des champs projetés lors du dernier push réussi (détection de drift distant)."
         },
         "url": { "type": "string" }
       }

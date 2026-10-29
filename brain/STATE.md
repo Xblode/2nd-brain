@@ -43,7 +43,7 @@ Aucune question `OPEN-` active dans `brain/DECISIONS.md` pour le cadrage initial
 
 ## Prochaine action utile
 
-Lots d'exécution possibles : configurer `.clickup/mapping.yaml` + premier push via skill ; ou implémenter un script d'init template respectant DEC-008 ; ou premières entrées pilotes projet réel.
+Convention ClickUp harmonisée (socle Inbox+docs, clés `LIST.*`, `LIST.BUGS`, `status_map`, contrat parent Template) — docs seulement, pas de runtime. Suites possibles : renseigner `.clickup/mapping.yaml` du dépôt + `status_map` réel ; aligner la Template ClickUp (ajouter Tasks si voulu, clarifier Phase en champ) ; script d'init DEC-008 ; ou premières entrées pilotes.
 
 ## Documents de référence
 

@@ -38,15 +38,13 @@ Charger un seul module selon le besoin : `modules/convention.md`, `modules/sync.
 | Conversation | Cadrage seulement |
 | SQLite | Index dérivé, jamais seule copie |
 
-## Convention listes (proposition)
+## Convention listes (contrat)
 
-- **Inbox** — capture manuelle. L'IA n'y écrit pas.
-- **Roadmap** — jalons + critères. Pas de copie des tâches.
-- **Tasks** — actions uniques. Préférer un champ `Phase` à une liste par phase.
-- **Decisions** — miroir éventuel ; le canon reste `brain/DECISIONS.md`.
-- **Issues** — problèmes / risques / blocages (canon local `ISSUE-`).
+Socle obligatoire : **Inbox** (`LIST.INBOX`, capture humaine — l'IA n'y écrit pas) + **docs** (`LIST.DOCS`).
 
-Noms : un seul mot, pas de préfixe numérique.
+Selon besoin : **Tasks** (`LIST.TASKS`), **Roadmap** (`LIST.ROADMAP`, jalons + critères seulement), **Bugs** (`LIST.BUGS` — un seul nom ; « Issues » = la même liste).
+
+Pas de liste Decisions / Batches par défaut. Phases = champ ou vues, pas listes séparées. Détail : `modules/convention.md`.
 
 ## Qualité d'une tâche (local d'abord)
 
@@ -63,7 +61,7 @@ Le skill **mappe** ces champs vers ClickUp ; il ne complète pas un vide local e
 5. Faire approuver — préparer ≠ autoriser
 6. Exécuter via outils disponibles
 7. Vérifier et reporter
-8. Mettre à jour `clickup.task_id` / `last_pushed` si succès
+8. Mettre à jour `clickup.task_id` / `list_id` / `last_pushed` si succès
 
 ## Sync et templates
 
@@ -77,7 +75,8 @@ Duplication de template : `modules/templates.md`.
 - Ne pas écraser le local pour coller à ClickUp sans proposition approuvée.
 - Ne pas écrire dans une Inbox.
 - Ne pas inventer d'ID, de résultat d'API, ni d'outil disponible.
-- Ne pas changer la convention listes en passant : proposer, attendre.
+- Ne pas changer la convention listes / clés `LIST.*` en passant : proposer, attendre.
+- Ne pas approximer un statut ClickUp absent du `status_map` : signaler l'écart.
 
 ## Réponse
 

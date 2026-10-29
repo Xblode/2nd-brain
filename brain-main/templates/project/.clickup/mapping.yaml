@@ -4,15 +4,17 @@ enabled: false
 purpose: >-
   Mapping local (SoT, DEC-007) → projection ClickUp. Pas une connexion.
   Le skill lit brain/TASKS.md et pousse vers ces listes après approbation.
+  Les clés LIST.* sont le contrat agents ; les IDs sont propres à CE projet.
 resources:
   workspace_id: null
   space_id: null
-  list_ids: []
-  # Exemple de clés logiques → IDs ClickUp (à renseigner par projet) :
-  # lists:
-  #   Tasks: null
-  #   Issues: null
-  #   Roadmap: null
+  # Ne jamais coller ici les IDs de la Template ou d'un autre dossier.
+  lists:
+    LIST.INBOX: null    # obligatoire — capture humaine ; l'IA n'y écrit pas
+    LIST.DOCS: null     # obligatoire — surface docs ClickUp
+    LIST.TASKS: null    # optionnel — exécution
+    LIST.ROADMAP: null  # optionnel — jalons seulement
+    LIST.BUGS: null     # optionnel — problèmes (nom affiché : Bugs)
 sync:
   mode: propose_only
   source_of_truth: local
@@ -21,6 +23,17 @@ sync:
   update_enabled: false
   delete_enabled: false
   require_explicit_approval: true
+  # Correspondance statut registre local → nom de statut ClickUp de CE projet.
+  # Si un statut local n'a pas d'entrée : signaler l'écart, ne pas approximer.
+  status_map: {}
+  # Exemple (à adapter aux libellés réels du projet) :
+  # status_map:
+  #   proposed: "à faire"
+  #   accepted: "à faire"
+  #   active: "en cours"
+  #   blocked: "bloquée"
+  #   resolved: "terminée"
 conflicts:
   policy: manual_review
   # En cas de drift ClickUp : proposer patch local ou re-push ; jamais écraser le local en silence.
+  # Comparer local, distant, et clickup.last_pushed (voir modules/sync.md).

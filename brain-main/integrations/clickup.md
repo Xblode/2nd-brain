@@ -10,13 +10,20 @@ L'agent qui traite ClickUp est `brain-main/skills/clickup/SKILL.md`. Le charger 
 
 `brain/TASKS.md` reste le document canonique des tâches. ClickUp n'y substitue pas.
 
-Espaces du workspace (observés) :
+## Structure (aperçu)
+
+Socle : Inbox + docs. Options selon besoin : Tasks, Roadmap, Bugs (`LIST.BUGS` — pas une seconde liste « Issues »).  
+Décisions et mémoire riche : fichiers locaux. Clés logiques et détails : `brain-main/skills/clickup/modules/convention.md`.
+
+Espaces (rôles génériques) :
 
 - **Mon organisation** : vrac, vie perso, notes générales.
 - **Projets** : un dossier par projet, plus le dossier **Template** (base) et la liste **Process**.
 
-La topologie détaillée est dans `brain-main/skills/clickup/modules/convention.md`. La sync conception : `modules/sync.md`.
+Les IDs concrets d’un workspace appartiennent à l’inventaire / au mapping projet, pas à ce contrat commun.
 
-Le dossier `.clickup/` décrit la correspondance : espaces, listes, mapping d'IDs, mode `propose_only`. ClickUp ne lit pas ce dossier. Connexion = client MCP, sans secret dans Git.
+La topologie détaillée : `modules/convention.md`. Sync : `modules/sync.md`. Duplication : `modules/templates.md`.
+
+Le dossier `.clickup/` décrit la correspondance : clés `LIST.*`, IDs, `status_map`, mode `propose_only`. ClickUp ne lit pas ce dossier. Connexion = client MCP, sans secret dans Git.
 
 Démarrer en lecture ou en proposition. Ne pas créer, modifier, assigner ou supprimer une tâche ClickUp sans approbation explicite, et sans entrée locale quand l'IA initie le travail. Ne pas effacer une tâche parce qu'une recherche locale ou distante est incomplète.
