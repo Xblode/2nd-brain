@@ -10,18 +10,19 @@ phase: m1_done
 runtime_status: not_implemented
 milestone: M1
 milestone_status: closed
-current_focus: "M1 clos — écart ClickUp push documenté ; suite = TASK-012 ou jalon 2"
-next_action: "Quand prêt : créer LIST.TASKS + .clickup/mapping.yaml puis /clickup (TASK-012) ; sinon cadrer jalon 2."
-active_tasks:
-  - TASK-012
+current_focus: "M1 clos — écart ClickUp push résolu (TASK-012) ; jalon 2 non ouvert"
+next_action: "Quand prêt : cadrer jalon 2, ou traiter TASK-011 (proposed) / DEC-011–012."
+active_tasks: []
 resolved_m1:
   - TASK-007
   - TASK-008
   - TASK-009
   - TASK-010
+resolved_m1_1:
+  - TASK-012
 blockers: []
 known_gaps:
-  - "ClickUp push : mapping projet + LIST.TASKS + status_map (TASK-012)"
+  - "Statuts ClickUp espace Projets = phases web ; status_map minimal Open/Closed (pas de en cours / bloquée)"
 open_questions: []
 decisions:
   adopted:
@@ -54,6 +55,7 @@ canonical_sources:
   info_map: brain-main/conventions/INFORMATION_MAP.yaml
   memory_policy: brain-main/conventions/memory-policy.md
   clickup_skill: brain-main/skills/clickup/SKILL.md
+  clickup_mapping: .clickup/mapping.yaml
   commands: brain-main/skills/COMMANDS.md
 ```
 
@@ -64,11 +66,12 @@ canonical_sources:
 | Docs, conventions, skills, DEC-001–010 | Runtime `core/`, parser, SQLite, MCP SB, CLI |
 | Mémoire `brain/` + template structurel aligné | — |
 | Preuve Chat → local (`/note`) | — |
-| Preview `/clickup` MCP (lot documenté) | **Push** ClickUp (TASK-012) |
+| Preview + **push** `/clickup` (TASK-001…012 → LIST.TASKS) | — |
 | Pack `web-starter` (optionnel) | Application web |
+| `.clickup/mapping.yaml` projet (IDs réels) | Workflow statuts opérationnels dédiés sur l’espace Projets |
 
-## Clôture M1
+## Clôture M1 / M1.1
 
 - Preuves : TASK-007…010 resolved ; détail dans `OVERVIEW.md`.
-- Écart accepté : push ClickUp plus tard → **TASK-012**.
+- TASK-012 resolved 2026-10-29 : mapping + LIST.TASKS + push lot.
 - Pas de jalon 2 ouvert automatiquement.

@@ -1,0 +1,34 @@
+version: 1
+provider: clickup
+enabled: true
+purpose: >-
+  Mapping local (SoT, DEC-007) → projection ClickUp pour le dépôt dogfood Second Brain.
+  Clés LIST.* = contrat agents ; IDs propres à Projets / 2nd Brain.
+resources:
+  workspace_id: "90151633729"
+  space_id: "90156746497"
+  folder_id: "1201110000005979"
+  lists:
+    LIST.INBOX: "1201110000007773"   # Inbox — capture humaine ; l'IA n'y écrit pas
+    LIST.DOCS: "1201110000005980"    # docs (folder ClickUp Docs)
+    LIST.TASKS: "1201110000007783"   # Tasks — exécution (créée 2026-10-29, TASK-012)
+    LIST.ROADMAP: "1201110000007779" # Roadmap — jalons
+    LIST.BUGS: "1201110000007778"    # Bugs
+sync:
+  mode: propose_only
+  source_of_truth: local
+  direction: local_to_clickup
+  create_enabled: true
+  update_enabled: true
+  delete_enabled: false
+  require_explicit_approval: true
+  # Statuts d'espace Projets = phases web (pas de workflow opérationnel dédié).
+  # Mapping minimal honnête Open/Closed ; blocked non mappé (signaler, ne pas approximer).
+  status_map:
+    proposed: "Open"
+    accepted: "Open"
+    active: "Open"
+    resolved: "Closed"
+  # Écart connu : pas de "en cours" / "bloquée" / "à faire" sur l'espace Projets.
+conflicts:
+  policy: manual_review
