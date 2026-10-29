@@ -1,11 +1,28 @@
 # État du projet
 
-## Résumé
+Point d'entrée opérationnel. Lire avant tout travail substantiel.
+Ce fichier décrit l'état réel, pas une cible.
 
-- **Objectif actuel :** à cadrer.
-- **Phase :** découverte.
-- **État :** modèle initial.
+```yaml
+updated: "YYYY-MM-DD"
+project: ""
+phase: discovery
+runtime_status: n/a
+current_focus: "à cadrer"
+next_action: "Clarifier besoin, usagers et critères de réussite (/cadrer)."
+blockers: []
+open_questions: []
+decisions:
+  adopted: []
+canonical_sources:
+  overview: brain/OVERVIEW.md
+  architecture: brain/ARCHITECTURE.md
+  decisions: brain/DECISIONS.md
+  tasks: brain/TASKS.md
+```
 
-## Prochaine action
+## Distinctions
 
-Clarifier le besoin, les utilisateurs et les critères de réussite avant d'ajouter d'autres documents.
+| Existe réellement | Seulement prévu |
+| --- | --- |
+| (à remplir) | (à remplir) |

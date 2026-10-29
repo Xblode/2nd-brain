@@ -1,11 +1,11 @@
 ---
 name: clickup
 description: >-
-  Applique la convention ClickUp du Second Brain, lit les tâches locales
-  (brain/TASKS.md, registre DEC-006/007) et prépare les écritures ClickUp en
-  projection. À utiliser dès qu'une demande parle de ClickUp, tâche, liste,
-  statut, assignation, commentaire, échéance, jalon, .clickup/, mapping ou
-  duplication de template. Pas pour Notion ni pour trancher le registre.
+  Prépare un lot de projection local → ClickUp (convention Second Brain,
+  LIST.*, DEC-007) après prévisualisation. À utiliser avec /clickup ou pour
+  tâche, liste, statut, échéance, .clickup/, mapping, duplication de template.
+  Pas pour Notion ni pour trancher le registre.
+disable-model-invocation: true
 ---
 
 # ClickUp — Second Brain
@@ -48,20 +48,23 @@ Pas de liste Decisions / Batches par défaut. Phases = champ ou vues, pas listes
 
 ## Qualité d'une tâche (local d'abord)
 
-Une tâche destinée à ClickUp doit exister en local en bloc `entry` avec au minimum : `id`, `kind`, `status`, `title`, `created`, `updated`, `sources`, `relations`, plus selon besoin `assignees`, `due`, `priority`, `list`, `milestone`, `acceptance`, `clickup`.
+Une tâche destinée à ClickUp doit exister en local comme objet JSONL (DEC-009) avec au minimum : `id`, `kind`, `status`, `title`, `created`, `updated`, `sources`, `relations`, plus selon besoin `assignees`, `due`, `priority`, `list`, `milestone`, `acceptance`, `clickup`.
 
 Le skill **mappe** ces champs vers ClickUp ; il ne complète pas un vide local en inventant depuis ClickUp sans proposition de patch local.
 
-## Workflow
+## Workflow (`/clickup`)
 
-1. Lire le local (`TASKS.md` / registre) et le mapping
-2. Lire ClickUp seulement pour comparer / vérifier
-3. Qualifier l'écart (créer / mettre à jour / drift)
-4. Prévisualiser le diff ClickUp dérivé du local
-5. Faire approuver — préparer ≠ autoriser
-6. Exécuter via outils disponibles
-7. Vérifier et reporter
-8. Mettre à jour `clickup.task_id` / `list_id` / `last_pushed` si succès
+Mode défaut : **prévisualisation**. `/clickup` autorise l'analyse, pas l'écriture.
+
+1. Lire `brain/STATE.md`, le local (`TASKS.md` / registre) et `.clickup/mapping.yaml`
+2. Si le contexte conversationnel ajoute des tâches candidates : les proposer d'abord comme entrées **locales** (ou lier à des `TASK-` existantes) — ClickUp ne devient pas SoT
+3. Classer : tâches à pousser / à clarifier / idées non engagées / hors périmètre
+4. Résoudre les listes via clés `LIST.*` uniquement (pas de listes métier type Cadrage/Web d'anciens kits)
+5. Lire ClickUp pour comparer / doublons / drift
+6. Prévisualiser le lot champ par champ (crée / maj / ignore)
+7. Faire approuver le lot exact — préparer ≠ autoriser
+8. Exécuter seulement l'approuvé ; vérifier ; reporter
+9. Mettre à jour `clickup.task_id` / `list_id` / `last_pushed` si succès
 
 ## Sync et templates
 

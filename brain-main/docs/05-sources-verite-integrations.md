@@ -4,7 +4,7 @@
 
 1. Instruction humaine explicite et décision récente.
 2. Documents canoniques du projet (`brain/`, registre DEC-006).
-3. Registre atomique dans les collections Markdown.
+3. Registre atomique dans les collections Markdown (entrées JSONL, DEC-009).
 4. Index SQLite, pour retrouver une source, pas pour la remplacer.
 5. Conversation ou journal, à vérifier avant d'en faire une vérité durable.
 6. GitHub, ClickUp, Notion : surfaces spécialisées — **jamais SoT silencieuse** (DEC-007).

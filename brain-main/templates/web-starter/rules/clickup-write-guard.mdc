@@ -1,0 +1,17 @@
+﻿---
+description: Protections permanentes pour les opérations ClickUp (Second Brain).
+alwaysApply: true
+---
+
+# ClickUp Write Guard
+
+- Convention : `brain-main/skills/clickup/modules/convention.md` et `sync.md` (DEC-007). Pas d'autre convention de listes.
+- Préparer ou pousser des tâches : commande `/clickup`.
+- Prévisualisation ≠ exécution. Aucune écriture ClickUp sans approbation du lot exact présenté.
+- Espace par défaut : `Projets`, dossier au nom exact du projet. `Mon organisation` hors périmètre sans autorisation.
+- Listes via clés `LIST.*` du mapping projet. Ne pas inventer une liste ni utiliser Inbox.
+- Local (`brain/TASKS.md`) = SoT. Ne pas créer de tâche ClickUp sans entrée locale correspondante quand l'IA initie le travail.
+- Lire la liste et ses statuts réels ; `status_map` projet ; signaler les écarts, ne pas approximer.
+- Vérifier doublons (id local, `clickup.task_id`, titre, critères).
+- N'inventer ni dates, estimations, priorité, responsable, résultats d'outil.
+- Restituer liens et identifiants réellement retournés.

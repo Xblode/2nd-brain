@@ -6,7 +6,7 @@
    - `decision` / `question` → `brain/DECISIONS.md`
    - `task` → `brain/TASKS.md`
    - `fact` / `hypothesis` / `idea` / `issue` / `reference` → fichier collection sous `brain/registry/` (créer le fichier seulement au premier besoin)
-4. Préparer une entrée au schéma `registry-schema.json` : section `### {id} — {title}` + bloc YAML fenced `entry` + prose. Nouveau id monotone avec le préfixe du kind (`taxonomy.yaml`). Statut initial : `proposed`.
+4. Préparer une entrée au schéma `registry-schema.json` : **une ligne JSON** dans le bloc `jsonl` de la collection (DEC-009). Nouveau id monotone avec le préfixe du kind (`taxonomy.yaml`). Statut initial : `proposed`. Pas de prose dupliquant l'entrée sous la ligne.
 5. Exclure toute cible sous `inbox/`.
 6. Demander une approbation humaine. Ne pas l'accorder soi-même (DEC-003).
 7. Après accord, relire la cible avant d'écrire ; appliquer le statut validé (`accepted` / `rejected` / `deferred`, puis transitions de kind).

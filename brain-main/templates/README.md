@@ -1,8 +1,12 @@
 # Templates
 
-`project/` est le modèle à installer dans un dépôt cible. **Ne pas** y copier tout `brain-main/`.
+| Dossier | Rôle |
+| --- | --- |
+| `project/` | Socle mémoire + mappings + stubs de commandes. **Ne pas** y copier tout `brain-main/`. |
+| `web-starter/` | Pack web optionnel (docs, rules, modèles). **Pas** une application ni la mémoire par défaut. Installé via `/build` seulement si profil web retenu. |
 
-Contrat : **DEC-008** + `project/template-manifest.yaml`.
+Contrat socle : **DEC-008** + `project/template-manifest.yaml`.  
+Commandes : `../skills/COMMANDS.md`. État maître projet : `brain/STATE.md`.
 
 | Politique | Comportement |
 | --- | --- |

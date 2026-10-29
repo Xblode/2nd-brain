@@ -1,7 +1,10 @@
 # Taxonomie adoptée (DEC-006 / OPEN-001 résolu).
+# Sérialisation des entrées : DEC-009 (JSONL, une ligne physique par objet).
 # Contrat d'implémentation pour les entrées de registre.
 status: adopted
 decision: DEC-006
+serialization_decision: DEC-009
+entry_format: jsonl_one_object_per_physical_line
 kinds:
   - fact
   - hypothesis

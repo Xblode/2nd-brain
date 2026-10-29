@@ -1,55 +1,66 @@
 # État du projet — Second Brain
 
-> À lire avant un travail substantiel. Ce fichier décrit l'état réel, pas une cible.
-> Dernière mise à jour : 2026-10-29. Commit de référence à vérifier via `git log` / `git status`.
+Point d'entrée opérationnel. Lire avant tout travail substantiel.
+Ce fichier décrit l'état réel, pas une cible.
 
-## Résumé
+```yaml
+updated: "2026-10-29"
+project: Second Brain
+phase: milestone_1
+runtime_status: not_implemented
+milestone: M1
+current_focus: "Jalon 1 — Chat → brain/ → ClickUp ; valider archi ; skills anti-perte"
+next_action: "Tester le flux M1 : message → /note → maj brain/ → /clickup (prévisualisation)."
+active_tasks:
+  - TASK-007
+  - TASK-008
+  - TASK-009
+  - TASK-010
+blockers: []
+open_questions: []
+decisions:
+  adopted:
+    - DEC-001
+    - DEC-002
+    - DEC-003
+    - DEC-004
+    - DEC-005
+    - DEC-006
+    - DEC-007
+    - DEC-008
+    - DEC-009
+    - DEC-010
+  framing_closed:
+    - OPEN-001
+    - OPEN-002
+    - OPEN-003
+canonical_sources:
+  agents: AGENTS.md
+  overview: brain/OVERVIEW.md
+  architecture: brain/ARCHITECTURE.md
+  decisions: brain/DECISIONS.md
+  tasks: brain/TASKS.md
+  ideas: brain/registry/ideas.md
+  taxonomy: brain-main/conventions/taxonomy.yaml
+  schema: brain-main/conventions/registry-schema.json
+  info_map: brain-main/conventions/INFORMATION_MAP.yaml
+  memory_policy: brain-main/conventions/memory-policy.md
+  clickup_skill: brain-main/skills/clickup/SKILL.md
+  commands: brain-main/skills/COMMANDS.md
+```
 
-- **Objectif :** une mémoire de projet locale, lisible et contrôlée, pour les agents et les humains.
-- **Phase :** squelette documentaire. DEC-006 (registre), DEC-007 (sync/propriété), DEC-008 (template) adoptées. Aucun composant d'exécution n'est implémenté.
-- **État :** décisions ouvertes de cadrage fermées. Parser, MCP, CLI, index SQLite, script de déploiement absents.
+## Distinctions
 
-## Ce qui existe vraiment
+| Existe réellement | Seulement prévu / pas encore prouvé |
+| --- | --- |
+| Docs, conventions, skills textuels, DEC-001–010 | Runtime `core/`, parser, SQLite, MCP, CLI |
+| Mémoire `brain/` (STATE, OVERVIEW, ARCHITECTURE, DECISIONS, TASKS, inbox, registry/ideas, references, runtime) | Test manuel bout-en-bout M1 (preuve) |
+| Skills `/` ancrés sur `brain/` + anti-perte (`/note`, memory-policy) | Sync ClickUp automatisée |
+| Template `templates/project/brain/` aligné sur l’exemple | `/build` 100 % automatisé |
+| Contrats ClickUp + skill `/clickup` (prévisualisation) | Lot ClickUp réellement poussé et vérifié |
+| Pack `web-starter` (optionnel, hors M1) | Application web |
 
-- Arborescence `brain-main/`, `brain/`, `brain-main/templates/project/`.
-- Documents de vision `brain-main/docs/00`–`05`.
-- Conventions, skills, contrats d'intégration (textes).
-- `AGENTS.md` comme base d'instructions commune.
-- Décisions DEC-001 à DEC-008 dans `brain/DECISIONS.md`.
-- Contrats registre + champs ClickUp ; `template-manifest.yaml` + `.second-brain.yaml` (DEC-008).
-- Tâches au format entry dans `brain/TASKS.md`.
+## Jalon 1 — rappel
 
-## Ce qui n'est pas implémenté
-
-- Runtime `core/`, MCP, CLI, scripts (y compris install/update template)
-- index SQLite
-- fichiers collection hors DECISIONS/TASKS sous `brain/registry/`
-- connexion / push automatique ClickUp ou Notion
-
-## Décisions tenues
-
-- Brainstorming d'abord ; agent de code seulement sur lot choisi.
-- Fichiers canoniques = SoT ; SQLite = index dérivé.
-- Écriture durable : proposition puis approbation humaine.
-- Inbox manuelle ; aucune IA n'y écrit.
-- Aucun secret dans Git.
-- DEC-006 : registre Markdown collections + cycle de vie.
-- DEC-007 : local SoT ; ClickUp projection via skill.
-- DEC-008 : template `copy_once` / `sync_shared` / `link_only` ; `brain-main` par référence.
-
-## Décisions ouvertes
-
-Aucune question `OPEN-` active dans `brain/DECISIONS.md` pour le cadrage initial.
-
-## Prochaine action utile
-
-Convention ClickUp harmonisée (socle Inbox+docs, clés `LIST.*`, `LIST.BUGS`, `status_map`, contrat parent Template) — docs seulement, pas de runtime. Suites possibles : renseigner `.clickup/mapping.yaml` du dépôt + `status_map` réel ; aligner la Template ClickUp (ajouter Tasks si voulu, clarifier Phase en champ) ; script d'init DEC-008 ; ou premières entrées pilotes.
-
-## Documents de référence
-
-- `AGENTS.md`
-- `brain/DECISIONS.md`
-- `brain/TASKS.md`
-- `brain-main/templates/README.md`
-- `brain-main/skills/clickup/SKILL.md`
-- `README.md`
+**Flux :** comprendre → ranger en local (`brain/`) → accord → projeter ClickUp.  
+**Détail / critères :** `OVERVIEW.md`. **Décision :** DEC-010. **Tâches :** TASK-007 … TASK-010.

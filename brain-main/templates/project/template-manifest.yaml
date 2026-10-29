@@ -11,7 +11,16 @@ paths:
   .second-brain.yaml: copy_once
   brain/README.md: sync_shared
   brain/STATE.md: copy_once
+  brain/OVERVIEW.md: copy_once
+  brain/ARCHITECTURE.md: copy_once
+  brain/DECISIONS.md: copy_once
+  brain/TASKS.md: copy_once
   brain/inbox/README.md: sync_shared
+  brain/registry/README.md: sync_shared
+  brain/registry/ideas.md: copy_once
+
+  brain/references/README.md: sync_shared
+  brain/runtime/README.md: sync_shared
   .clickup/README.md: sync_shared
   .clickup/mapping.yaml: copy_once
   .notion/README.md: sync_shared
@@ -21,8 +30,23 @@ paths:
   .github/ISSUE_TEMPLATE/bug_report.md: sync_shared
   .github/ISSUE_TEMPLATE/feature_request.md: sync_shared
   .cursor/rules/second-brain.mdc: sync_shared
+  .cursor/rules/clickup-write-guard.mdc: sync_shared
+  .cursor/skills/cadrer/SKILL.md: sync_shared
+  .cursor/skills/build/SKILL.md: sync_shared
+  .cursor/skills/go/SKILL.md: sync_shared
+  .cursor/skills/statut/SKILL.md: sync_shared
+  .cursor/skills/note/SKILL.md: sync_shared
+  .cursor/skills/sync/SKILL.md: sync_shared
+  .cursor/skills/spec/SKILL.md: sync_shared
+  .cursor/skills/faire/SKILL.md: sync_shared
+  .cursor/skills/ui/SKILL.md: sync_shared
+  .cursor/skills/done/SKILL.md: sync_shared
+  .cursor/skills/audit/SKILL.md: sync_shared
+  .cursor/skills/fin/SKILL.md: sync_shared
+  .cursor/skills/clickup/SKILL.md: sync_shared
 
 # Jamais copiés — lus via brain_main_path (.second-brain.yaml)
+# Pack web-starter : installé à la demande par /build (pas ce manifeste)
 link_only_prefixes:
   - skills/
   - conventions/

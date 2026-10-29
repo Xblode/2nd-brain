@@ -2,4 +2,4 @@
 description: Mémoire et continuité du projet
 alwaysApply: true
 ---
-Lire `AGENTS.md` et `brain/STATE.md` avant une tâche substantielle. En réflexion, cadrer plutôt que coder. Toute écriture durable est proposée puis approuvée par un humain. Ne jamais écrire dans `brain/inbox/`.
+Lire `AGENTS.md` et `brain/STATE.md` (état maître) avant une tâche substantielle ; compléter avec `OVERVIEW`, `ARCHITECTURE`, `DECISIONS`, `TASKS` selon le besoin. Mémoire = `brain/` ; système commun = `brain-main/` (lien). Commandes : `brain-main/skills/COMMANDS.md`. En réflexion, `/cadrer` plutôt que coder. Toute écriture durable est proposée puis approuvée. Ne jamais écrire dans `brain/inbox/`. Pack web-starter optionnel seulement. ClickUp : `/clickup` + convention Second Brain uniquement.

@@ -1,3 +1,6 @@
 # Runtime
 
-Emplacement de l'index SQLite local et des journaux temporaires. Ignoré par Git quand les fichiers sont générés. Ce n'est pas une mémoire canonique. Ne pas y mettre de secret.
+- **Role:** emplacement de l'index SQLite local et des journaux temporaires.
+- **Scope:** dérivés reconstructibles, ignorés par Git une fois générés.
+- **Boundaries:** jamais mémoire canonique ; aucun secret.
+- **Status:** prévu — index non implémenté.

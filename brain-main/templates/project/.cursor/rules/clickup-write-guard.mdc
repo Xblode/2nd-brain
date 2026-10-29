@@ -1,0 +1,11 @@
+---
+description: Protections permanentes pour les opérations ClickUp (Second Brain).
+alwaysApply: true
+---
+
+# ClickUp Write Guard
+
+- Convention : `brain-main/skills/clickup/modules/convention.md` et `sync.md` (DEC-007).
+- Commande : `/clickup`. Prévisualisation ≠ exécution.
+- Aucune écriture ClickUp sans approbation du lot exact. Pas d'Inbox.
+- Listes via `LIST.*` dans `.clickup/mapping.yaml`. Local (`brain/TASKS.md`) = SoT.

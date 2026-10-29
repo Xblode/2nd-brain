@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.invalid/second-brain/registry-entry.schema.json",
   "title": "Entrée de registre Second Brain",
-  "description": "Schéma d'une entrée atomique (DEC-006). Champs opérationnels et mapping ClickUp (DEC-007) : le local est SoT ; ClickUp est une projection. SQLite reste un index dérivé.",
+  "description": "Schéma d'une entrée atomique (DEC-006). Sérialisation : un objet JSON par ligne physique dans un bloc Markdown jsonl (DEC-009). Champs opérationnels et mapping ClickUp (DEC-007) : le local est SoT ; ClickUp est une projection. SQLite reste un index dérivé.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -115,9 +115,11 @@
       "items": { "type": "string", "minLength": 1 }
     },
     "due": {
-      "type": "string",
       "description": "Échéance ISO date ou datetime (local SoT).",
-      "format": "date"
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "format": "date-time" }
+      ]
     },
     "priority": {
       "type": "string",

@@ -7,9 +7,10 @@ Ce fichier définit les règles durables applicables aux agents qui travaillent 
 1. Pour tout travail substantiel, lire `brain/STATE.md` afin de connaître l'état réel du projet.
 2. Lire ensuite uniquement les documents pertinents :
    - `README.md` pour l'entrée du dépôt ;
-   - `brain/OVERVIEW.md`, `brain/ARCHITECTURE.md`, `brain/DECISIONS.md` et `brain/TASKS.md` selon le besoin ;
-   - les documents concernés de `brain-main/docs/`, `brain-main/conventions/`, `brain-main/integrations/` ou `brain-main/skills/second-brain/` ;
-   - `brain-main/skills/clickup/SKILL.md` dès que la demande concerne ClickUp.
+   - la mémoire projet dans **`brain/`** : `OVERVIEW.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `TASKS.md` (exemple pratique de ce dépôt) ;
+   - pour faire évoluer le système : les cibles sous `brain-main/` (docs, conventions, integrations, skills) ;
+   - `brain-main/skills/clickup/SKILL.md` ou `/clickup` dès que la demande concerne ClickUp ;
+   - `brain-main/skills/COMMANDS.md` pour les commandes (`/cadrer`, `/build`, `/faire`, etc.) — ancrées dans `brain/`, pas dans le pack web par défaut.
 3. Examiner les fichiers, l'historique et l'état Git concernés avant de modifier quoi que ce soit. Ne pas écraser ni supprimer des changements utilisateur sans autorisation explicite.
 4. Distinguer ce qui est réellement implémenté, ce qui est documenté, ce qui est proposé et ce qui reste à décider. La présence d'un dossier ou d'un README ne prouve pas qu'un composant fonctionne.
 
@@ -26,7 +27,7 @@ Ce fichier définit les règles durables applicables aux agents qui travaillent 
 
 Second Brain est actuellement traité comme un squelette documentaire et architectural. Ne présenter ni le registre, ni la recherche, ni l'index, ni la CLI, ni le serveur MCP, ni les scripts de déploiement comme implémentés sans vérifier le code et les validations correspondantes.
 
-Le format du registre, les identifiants, les relations et le cycle de vie sont tranchés (DEC-006) : voir `brain/DECISIONS.md`, `brain-main/conventions/taxonomy.yaml` et `registry-schema.json`. Ne pas inventer un autre schéma.
+Le format du registre, les identifiants, les relations et le cycle de vie sont tranchés (DEC-006) ; la sérialisation des entrées est tranchée (DEC-009) : conteneur Markdown, un objet JSON par ligne physique dans un bloc `jsonl`. Voir `brain/DECISIONS.md`, `brain-main/conventions/taxonomy.yaml` et `registry-schema.json`. Ne pas inventer un autre schéma.
 
 La propriété des champs et la sync sont tranchées (DEC-007) : le local est la source de vérité de tous les champs (y compris tâches) ; ClickUp est une projection humaine ; le skill ClickUp lit `brain/TASKS.md` / le registre pour proposer les mises à jour ClickUp. Ne pas réintroduire ClickUp ou Notion comme SoT d'un champ.
 
@@ -55,7 +56,8 @@ Quand une nouvelle décision est nécessaire, présenter les options, compromis,
 
 - Les contrats communs des services et outils sont documentés dans `brain-main/integrations/` ; les correspondances propres à un projet résident dans sa configuration locale prévue à cet effet.
 - `.clickup/` et `.notion/` sont des conventions de documentation et de mapping. Leur présence ne configure ni n'authentifie un serveur MCP.
-- Toute demande ClickUp passe par `brain-main/skills/clickup/SKILL.md`. Cette skill n'établit pas la connexion : elle dit comment l'utiliser si l'outil est réellement disponible.
+- Toute demande ClickUp passe par `/clickup` (`brain-main/skills/clickup/SKILL.md`). Convention Second Brain (`LIST.*`, DEC-007) uniquement. Cette skill n'établit pas la connexion : elle dit comment l'utiliser si l'outil est réellement disponible.
+- Pour lancer ou piloter un projet : commandes dans `brain-main/skills/COMMANDS.md`. Mémoire : structure `brain/` ; état maître `brain/STATE.md` — ne pas créer de `PROJECT_STATE.md` concurrent. Le pack `web-starter` n'est pas la mémoire par défaut.
 - Avant une action externe affectant GitHub, ClickUp, Notion ou une autre plateforme, préciser l'opération, la cible et ses effets, puis demander une approbation explicite, sauf si cette opération exacte a déjà été autorisée.
 - Ne jamais ajouter de jeton, clé API, mot de passe, cookie, fichier d'authentification ou secret à Git, aux logs ou aux exemples. Utiliser la configuration sécurisée prévue par l'outil.
 - Respecter le principe du moindre privilège. Ne pas créer de mécanisme d'écriture ou d'exécution arbitraire lorsqu'une opération spécifique suffit.

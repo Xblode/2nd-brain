@@ -3,7 +3,7 @@
 ## Sources
 
 1. Fichiers canoniques, lisibles et versionnés.
-2. Registre : éléments atomiques en Markdown collection (DEC-006). Schéma : `conventions/registry-schema.json` ; taxonomie : `conventions/taxonomy.yaml`.
+2. Registre : éléments atomiques en collections Markdown, une entrée JSON par ligne (DEC-006, DEC-009). Schéma : `conventions/registry-schema.json` ; taxonomie : `conventions/taxonomy.yaml`.
 3. Documents de synthèse : état, décisions, tâches, architecture.
 4. Index SQLite local, reconstructible, jamais seule copie d'une décision.
 5. Journaux techniques temporaires, distincts de la mémoire durable.

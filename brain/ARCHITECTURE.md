@@ -1,24 +1,36 @@
 # Architecture
 
+Responsabilités et relations. Détail des composants : leurs README.
+
+| Zone | Responsabilité |
+| --- | --- |
+| `brain/` | Mémoire de **ce** dépôt (état, décisions, tâches, registre au besoin). |
+| `brain-main/` | Système partagé : conventions, docs, skills, contrats, emplacements runtime. |
+| `brain-main/templates/project/` | Modèle générique pour futurs projets (pas la mémoire de ce dépôt). |
+| Fichiers canoniques | Source de vérité versionnée (Markdown + entrées JSONL). |
+| SQLite (`brain/runtime/`) | Index reconstructible — jamais SoT. |
+| MCP / CLI | Interfaces futures ; doivent partager la logique `core/` (non implémenté). |
+| Intégrations | Opérations externes encadrées par `integrations/` + permissions + approbation. |
+
 ```
 2nd-brain/
-├── .github/          configuration GitHub de ce dépôt
-├── brain-main/       système commun
-│   ├── docs/
-│   ├── conventions/
-│   ├── skills/         second-brain et clickup
-│   ├── core/         non implémenté
-│   ├── integrations/
-│   ├── adapters/
-│   ├── mcp-server/   non implémenté
-│   ├── cli/          non implémenté
-│   ├── scripts/      non implémenté
+├── brain-main/     système commun
+│   ├── conventions/ skills/ docs/ integrations/
+│   ├── core/ mcp-server/ cli/ scripts/   # emplacements, non implémentés
 │   └── templates/project/
-└── brain/            mémoire de ce dépôt
+└── brain/          mémoire de ce dépôt
 ```
 
-`brain/` et `templates/project/brain/` ne sont pas interchangeables. Le premier décrit ce dépôt. Le second est le modèle des autres projets.
+`brain/` ≠ `templates/project/brain/`.
 
-Recherche prévue : état, puis fichiers canoniques, puis index s'il existe. Écriture prévue : proposition, validation humaine, application. Action externe prévue : outil disponible, proposition, approbation, rapport.
+## Flux jalon 1 (canonique)
 
-Rien de ces flux n'est codé.
+```
+Chat (humain) → comprendre & classer (skills)
+             → proposer écriture dans brain/ (sans supprimer l'existant)
+             → accord humain → appliquer
+             → /clickup : prévisualiser → accord → projeter ClickUp
+```
+
+Inbox = capture manuelle seulement. ClickUp n’est jamais la source des champs.  
+Flux runtime (index, MCP, sync auto) : prévus, hors jalon 1.

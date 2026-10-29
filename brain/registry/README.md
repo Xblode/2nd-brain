@@ -1,7 +1,7 @@
 # Registre
 
-Emplacement réservé aux entrées atomiques de ce dépôt pour les kinds sans foyer de synthèse : `fact`, `hypothesis`, `idea`, `issue`, `reference`.
-
-Format (DEC-006) : un fichier **collection** par kind au premier besoin réel (ex. `facts.md`), jamais un fichier par idée. Forme d'entrée : `### {id} — {title}` + bloc YAML fenced `entry` + prose. Voir `brain/DECISIONS.md` (DEC-006), `brain-main/conventions/taxonomy.yaml` et `registry-schema.json`.
-
-Décisions et questions ouvertes → `brain/DECISIONS.md`. Tâches → `brain/TASKS.md`. Aucune entrée créée ici tant qu'un besoin réel n'apparaît pas.
+- **Role:** collections atomiques pour kinds sans foyer de synthèse (`fact`, `hypothesis`, `idea`, `issue`, `reference`).
+- **Scope:** un fichier collection par kind (ex. `facts.md`), jamais un fichier par idée.
+- **Boundaries:** décisions/questions → `brain/DECISIONS.md` ; tâches → `brain/TASKS.md`. Pas de création spéculative.
+- **Format:** Markdown + bloc `jsonl`, un objet JSON par ligne (DEC-009). Contrats : `taxonomy.yaml`, `registry-schema.json`.
+- **Status:** `ideas.md` prêt (jalon 1 — ne pas perdre d'idées) ; autres collections au besoin.

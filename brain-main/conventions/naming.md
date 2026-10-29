@@ -23,4 +23,5 @@
 | reference | `REF-` |
 
 - Alias historiques de ce dépôt : `D-00x` → `DEC-00x`, `O-00x` → `OPEN-00x` (lecture seule).
-- Stockage en fichiers **collection** (plusieurs entrées par fichier), jamais un fichier par idée. Voir `taxonomy.yaml` et `registry-schema.json`.
+- Stockage en fichiers **collection** (plusieurs entrées par fichier), jamais un fichier par idée.
+- Sérialisation (DEC-009) : une entrée = un objet JSON par ligne physique dans un bloc `jsonl`. Voir `taxonomy.yaml` et `registry-schema.json`.

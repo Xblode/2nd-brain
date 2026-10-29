@@ -19,7 +19,7 @@ Tant que l’humain n’a pas approuvé **l’action externe précise**, le comp
 ## Lecture obligatoire avant toute écriture ClickUp
 
 1. `brain/TASKS.md` (et `brain/registry/*.md` si issues/faits liés)
-2. Entrées `kind: task` / `issue` au format `entry` (DEC-006 + champs opérationnels)
+2. Entrées `kind: task` / `issue` en JSONL (DEC-006 / DEC-009 + champs opérationnels)
 3. `.clickup/mapping.yaml` (clés `LIST.*`, IDs, `status_map`, mode)
 4. État ClickUp actuel des IDs mappés (si outil disponible)
 
@@ -94,7 +94,7 @@ Aucune résolution automatique qui ferait de ClickUp la source d’un champ.
 
 ## Protocole
 
-1. Construire le payload ClickUp **depuis** le bloc `entry` local (titre, description, statut via `status_map`, assignés, échéance, priorité, liste via clé `LIST.*`).
+1. Construire le payload ClickUp **depuis** l'objet JSONL local (titre, description, statut via `status_map`, assignés, échéance, priorité, liste via clé `LIST.*`).
 2. Rapport de prévisualisation : crée / met à jour / ignore, champ par champ.
 3. Comparer local, distant, last_pushed (§ ci-dessus).
 4. Drift distant : signaler ; proposer patch local **ou** re-push local — ne pas écraser le local en silence.
